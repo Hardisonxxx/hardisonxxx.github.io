@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>2020 最新配置vps - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SS 被 Q 严重， 推荐V2ray ！！！
+链接
+
+更改内核
+由于我们安装速锐加速，网上现有的速锐解版是需要特定版本的。以91yun为例需要将内核换为：
+CentOS6内核更换为：2.6.32-504.3.3.el6.x86_64
+rpm...">
+
+  <meta property="og:title" content="2020 最新配置vps - integererer">
+  <meta property="og:description" content="SS 被 Q 严重， 推荐V2ray ！！！
+链接
+
+更改内核
+由于我们安装速锐加速，网上现有的速锐解版是需要特定版本的。以91yun为例需要将内核换为：
+CentOS6内核更换为：2.6.32-504.3.3.el6.x86_64
+rpm...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/2020-zui-xin-pei-zhi-vps/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="2020 最新配置vps">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/2020-zui-xin-pei-zhi-vps">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">2020 最新配置vps</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2019.12.10</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <h1 id="ss-被-q-严重-推荐v2ray">SS 被 Q 严重， 推荐V2ray ！！！</h1>
+<p><a href="http://www.denglinzhe.com/index.php/mine/%20603%20.html">链接</a></p>
+<hr>
+<h2 id="更改内核">更改内核</h2>
+<p>由于我们安装速锐加速，网上现有的速锐解版是需要特定版本的。以91yun为例需要将内核换为：</p>
+<p>CentOS6内核更换为：2.6.32-504.3.3.el6.x86_64</p>
+<pre><code class="language-bash">rpm -ivh http://soft.91yun.pw/ISO/Linux/CentOS/kernel/kernel-firmware-2.6.32-504.3.3.el6.noarch.rpm
+rpm -ivh http://soft.91yun.pw/ISO/Linux/CentOS/kernel/kernel-2.6.32-504.3.3.el6.x86_64.rpm --force
+</code></pre>
+<p>CentOS7内核更换为：3.10.0-229.1.2.el7.x86_64</p>
+<pre><code class="language-bash">rpm -ivh http://soft.91yun.pw/ISO/Linux/CentOS/kernel/kernel-3.10.0-229.1.2.el7.x86_64.rpm --force
+
+</code></pre>
+<h2 id="查看内核是否安装成功">查看内核是否安装成功</h2>
+<pre><code class="language-bash">rpm -qa | grep kernel
+
+</code></pre>
+<p>其中列表里面要出现这个内核名称（以CentOS6为例：）<br>
+<img src="https://ww1.sinaimg.cn/large/a1cfc0e8ly1gbgwf5derbj20bj034dg6.jpg" alt="" loading="lazy"></p>
+<h2 id="重启-然后查看内核是否安装成功">重启 然后查看内核是否安装成功</h2>
+<pre><code class="language-bash">reboot
+</code></pre>
+<pre><code class="language-bash">uname -r
+
+</code></pre>
+<h2 id="搭建ssssr服务">搭建SS/SSR服务</h2>
+<h3 id="下载git">下载git</h3>
+<pre><code class="language-bash">yun install git
+</code></pre>
+<h3 id="下载ssssr软件包">下载ss/ssr软件包</h3>
+<pre><code class="language-bash">git clone https://github.com/suniceman/ss-fly
+</code></pre>
+<h3 id="运行ssssr安装包">运行ss/ssr安装包</h3>
+<pre><code class="language-bash">ss-fly/ss-fly.sh -i suniceman.com 1024  #ss (安装ss时候用这个)
+
+ss-fly/ss-fly.sh -ssr  #ssr(安装ssr用这个)
+
+</code></pre>
+<h2 id="安装启用速锐加速速锐只适用于kvm的vps">安装启用速锐加速（速锐只适用于KVM的vps）</h2>
+<pre><code class="language-bash">wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh
+</code></pre>
+<p>如果报错没有wegt  那就安装一个</p>
+<pre><code class="language-bash">yun -y install wget
+</code></pre>
+<pre><code class="language-卸载速锐">chattr -i /serverspeeder/etc/apx* &amp;&amp; /serverspeeder/bin/serverSpeeder.sh uninstall -f
+</code></pre>
+<blockquote>
+<p>感谢：<br>
+<a href="https://github.com/suniceman/ss-fly">https://github.com/suniceman/ss-fly</a><br>
+<a href="https://suniceman.com/2019/04/10/install-shadowsocks-in-one-command/">https://suniceman.com/2019/04/10/install-shadowsocks-in-one-command/</a><br>
+<a href="https://github.com/91yun/serverspeeder">https://github.com/91yun/serverspeeder</a><br>
+<a href="https://www.91yun.co/archives/795">https://www.91yun.co/archives/795</a></p>
+<p><a href="https://github.com/yz19930826/shadowsocks-d">https://github.com/yz19930826/shadowsocks-d</a> 最重要</p>
+</blockquote>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2019.12.10</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li><a href="#ss-%E8%A2%AB-q-%E4%B8%A5%E9%87%8D-%E6%8E%A8%E8%8D%90v2ray">SS 被 Q 严重， 推荐V2ray ！！！</a>
+<ul>
+<li><a href="#%E6%9B%B4%E6%94%B9%E5%86%85%E6%A0%B8">更改内核</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F">查看内核是否安装成功</a></li>
+<li><a href="#%E9%87%8D%E5%90%AF-%E7%84%B6%E5%90%8E%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F">重启 然后查看内核是否安装成功</a></li>
+<li><a href="#%E6%90%AD%E5%BB%BAssssr%E6%9C%8D%E5%8A%A1">搭建SS/SSR服务</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BDgit">下载git</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BDssssr%E8%BD%AF%E4%BB%B6%E5%8C%85">下载ss/ssr软件包</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8Cssssr%E5%AE%89%E8%A3%85%E5%8C%85">运行ss/ssr安装包</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%90%AF%E7%94%A8%E9%80%9F%E9%94%90%E5%8A%A0%E9%80%9F%E9%80%9F%E9%94%90%E5%8F%AA%E9%80%82%E7%94%A8%E4%BA%8Ekvm%E7%9A%84vps">安装启用速锐加速（速锐只适用于KVM的vps）</a></li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

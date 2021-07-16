@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>子系统Ubuntu用apt安装软件报错  - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="在 win10 Linux的子系统上安装Python3时，报错
+Ubuntu用apt安装软件报错  E: Could not read response to hello message from hook [ ! -f /usr/bin/...">
+
+  <meta property="og:title" content="子系统Ubuntu用apt安装软件报错  - integererer">
+  <meta property="og:description" content="在 win10 Linux的子系统上安装Python3时，报错
+Ubuntu用apt安装软件报错  E: Could not read response to hello message from hook [ ! -f /usr/bin/...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/zi-xi-tong-ubuntu-yong-apt-an-zhuang-ruan-jian-bao-cuo/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="子系统Ubuntu用apt安装软件报错 ">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/zi-xi-tong-ubuntu-yong-apt-an-zhuang-ruan-jian-bao-cuo">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">子系统Ubuntu用apt安装软件报错 </h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2019.04.10</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <p>在 win10 Linux的子系统上安装Python3时，报错</p>
+<p>Ubuntu用apt安装软件报错  E: Could not read response to hello message from hook [ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2&gt;/dev/null || true: Success E: Could not read response to hel<br>
+<img src="data:image/jpeg;base64,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" alt="" loading="lazy"></p>
+<pre><code class="language-bash">dengdeng@DESKTOP-G8M6ITC:~$ sudo apt-get install python3
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libdumbnet1
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  libpython3-stdlib python3-minimal python3.6 python3.6-minimal
+Suggested packages:
+  python3-doc python3-tk python3-venv python3.6-venv python3.6-doc binutils binfmt-support
+E: Could not read response to hello message from hook [ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2&gt;/dev/null || true: Success
+E: Could not read response to hello message from hook [ ! -f /usr/bin/snap ] || /usr/bin/snap advise-snap --from-apt 2&gt;/dev/null || true: Success
+</code></pre>
+<p>解决方法...</p>
+<pre><code class="language-bash">sudo rm -rf /etc/apt/apt.conf.d/20snapd.conf
+</code></pre>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2019.04.10</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

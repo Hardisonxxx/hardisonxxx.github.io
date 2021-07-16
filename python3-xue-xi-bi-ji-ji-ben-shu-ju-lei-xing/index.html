@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title># Python3 学习笔记(基本数据类型) - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Python3 学习笔记
+
+“#” #表示Python中的注释
+\n 换行符
+BIF == Built-in functions
+python与大多数计算机计算机语言的做法稍有不同，它并不是把值存储在变量中，而更像是把名字贴在值的上边
+要给...">
+
+  <meta property="og:title" content="# Python3 学习笔记(基本数据类型) - integererer">
+  <meta property="og:description" content="Python3 学习笔记
+
+“#” #表示Python中的注释
+\n 换行符
+BIF == Built-in functions
+python与大多数计算机计算机语言的做法稍有不同，它并不是把值存储在变量中，而更像是把名字贴在值的上边
+要给...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/python3-xue-xi-bi-ji-ji-ben-shu-ju-lei-xing/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="# Python3 学习笔记(基本数据类型)">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/python3-xue-xi-bi-ji-ji-ben-shu-ju-lei-xing">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold"># Python3 学习笔记(基本数据类型)</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2019.06.18</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <h1 id="python3-学习笔记">Python3 学习笔记</h1>
+<ol>
+<li>“#” #表示Python中的注释</li>
+<li>\n 换行符</li>
+<li>BIF == Built-in functions</li>
+<li>python与大多数计算机计算机语言的做法稍有不同，它并不是把值存储在变量中，而更像是把名字贴在值的上边</li>
+<li>要给一行特殊符号自动加转译符号“\” 给字符串前加r   <code>srt = r"C:\Desktop"</code></li>
+<li>保持格式原样换行格式输出字符串：将字符串用“”“...”“” 或 ‘’‘...’‘’括起来</li>
+<li>python中and运算符  ：  同真为真，有假则假。</li>
+</ol>
+<hr />
+<h2 id="基本数据类型">基本数据类型</h2>
+<p>6个</p>
+<ol>
+<li>Number</li>
+<li>String</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Sets（集合）</li>
+</ol>
+<h2 id="6-dictionaries字典">6. Dictionaries（字典）</h2>
+<h3 id="number">Number</h3>
+<ul>
+<li>int、float、bool、complex（复数）</li>
+<li>内置type()函数可以用来查询变量所指的对象类型
+<code>python
+&gt;&gt;&gt; i=2
+&gt;&gt;&gt; print(type(i))
+&lt;class 'int'&gt;</code>
+注意：</li>
+<li>python可以同时为多个变量赋值，如a,b=1,2</li>
+<li>数值的除法（/）总是会返回一个浮点数，要获取整数使用（//）操作符</li>
+</ul>
+<ul>
+<li>在混合计算时，Python会把整形转换为浮点数</li>
+</ul>
+<h3 id="string">String</h3>
+<ul>
+<li>Python中的字符串用单引号或双引号括起来，同时使用反斜杠(&#41;转义特殊字符</li>
+<li>如果不想让反斜杠发生转义，可以在字符串前面加一个r，表示原始字符串  <code>srt = r"C:\Desktop"</code></li>
+<li>字符串可以使用+运算符 串连接在一起，或者用*运算符重复 运算
+<code>python
+&gt;&gt;&gt; print('str'+'ing', 'my'*3)
+string mymymy</code></li>
+<li>python中的字符串有两种索引方式，第一种是从左往右，从0开始依次增加；第二种是从右往左，从-1开始依次减少。
+<ul>
+<li>注意：没有单独的字符类型，一个字符就是长度为1的字符串</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; word = 'Python'
+&gt;&gt;&gt; print(word[0], word[5])
+P n
+&gt;&gt;&gt; print(word[-1], word[-6])
+n P
+</code></pre></li>
+<li>还可以对字符串进行切片，获取一段子串。用冒号分割两个索引，形式为变量[头下标：尾下标]
+截取的范围是前闭后开的，并且两个索引都可以省略。</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; word = 'ilovepython'
+&gt;&gt;&gt; word[1:5]
+'love'
+&gt;&gt;&gt; word[:]
+'ilovepython'
+&gt;&gt;&gt; word[5:]
+'python'
+&gt;&gt;&gt; word[-10:-6]
+'love'
+</code></pre>
+<ul>
+<li>与c语言中字符串不同的是，python字符串不能被改变。向一个索引位置赋值，会报错  比如 <code>word[0]='m'</code> ,会导致错误。</li>
+</ul>
+<p>注意：</p>
+<ol>
+<li>Python可以同时为多个变量赋值，如a, b = 1, 2。</li>
+<li>一个变量可以通过赋值指向不同类型的对象。</li>
+<li>数值的除法（/）总是返回一个浮点数，要获取整数使用//操作符。</li>
+<li>在混合计算时，Pyhton会把整型转换成为浮点数。</li>
+</ol>
+<hr />
+<h3 id="list列表">List（列表）</h3>
+<ul>
+<li>List是python中使用最频繁的数据类型</li>
+<li>列表是写在方括号之间、用逗号分隔开的元素列表，列表中的元素类型可以不相同：</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; a = ['him', 25, 100, 'her']
+&gt;&gt;&gt; print(a)
+['him', 25, 100, 'her']
+</code></pre>
+<ul>
+<li>和字符串一样，列表同样可以被索引和切片，列表被切片后返回一个包含所元素的新列表</li>
+<li>列表还支持串联操作，使用+操作符</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; a = [1, 2, 3, 4, 5]
+&gt;&gt;&gt; a + [6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre>
+<p>列表索引类似于字符串的索引</p>
+<ul>
+<li>列表中的元素是可以改变的，与Python中的字符串不一样</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]
+&gt;&gt;&gt; a[0] = 9
+&gt;&gt;&gt; a[2:5] = [13, 14, 15]
+&gt;&gt;&gt; a
+[9, 2, 13, 14, 15, 6]
+&gt;&gt;&gt; a[2:5] = []   # 删除
+&gt;&gt;&gt; a
+[9, 2, 6]
+</code></pre>
+<p>注意：</p>
+<ol>
+<li>List写在方括号之间，元素用逗号隔开。</li>
+<li>和字符串一样，list可以被索引和切片。</li>
+<li>List可以使用+操作符进行拼接。</li>
+<li>List中的元素是可以改变的。</li>
+</ol>
+<hr />
+<h3 id="tuple元组">Tuple（元组）</h3>
+<ul>
+<li>元组（Tuple）与列表类似，不同之处在于元组不能修改，元组写在小括号里，元素之间用逗号隔开，元组中的元素类型也不相同：</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; a = (1991, 2014, 'physics', 'math')
+&gt;&gt;&gt; print(a, type(a), len(a))
+(1991, 2014, 'physics', 'math') &lt;class 'tuple'&gt; 4
+</code></pre>
+<ul>
+<li>元组与字符串类似，可以被索引且下标索引从0开始，也可以进行截取/切片</li>
+<li>可以把字符串看做一种特殊的元组</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; tup = (1, 2, 3, 4, 5, 6)
+&gt;&gt;&gt; print(tup[0], tup[1:5])
+1 (2, 3, 4, 5)
+
+</code></pre>
+<ul>
+<li>虽然tuple的元素不可改变，但它可以包含可变的对象，比如list列表</li>
+<li>构造包含0个或1个元素的tuple是个特殊的问题，所以有一些额外的语法规则</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; tup1 = () # 空元组
+&gt;&gt;&gt; tup2 = (20,) # 一个元素，需要在元素后添加逗号
+&gt;&gt;&gt; type(tup2)
+&lt;class 'tuple'&gt;
+&gt;&gt;&gt; tup3=(20)
+&gt;&gt;&gt; type(tup3)
+&lt;class 'int'&gt;
+</code></pre>
+<ul>
+<li>元组也支持用 + 操作符：</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; tup1, tup2 = (1, 2, 3), (4, 5, 6)
+&gt;&gt;&gt; print(tup1+tup2)
+(1, 2, 3, 4, 5, 6)
+</code></pre>
+<ul>
+<li>string、list和tuple都属于sequence（序列）</li>
+</ul>
+<p>注意：</p>
+<ol>
+<li>与字符串一样，元组的元素不能修改。</li>
+<li>元组也可以被索引和切片，方法一样。</li>
+<li>注意构造包含0或1个元素的元组的特殊语法规则。</li>
+<li>元组也可以使用+操作符进行拼接。</li>
+</ol>
+<h3 id="sets集合">Sets(集合)</h3>
+<ul>
+<li>集合(Set)是一个无序不重复元素的集。</li>
+<li>基本功能是进行成员关系测试和消除重复元素。</li>
+<li>可以使用大括号或者set()函数创建set集合。</li>
+<li>注意：创建一个空集合必须用set()而不是{},因为{}是用来创建一个空字典的。</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; student = {'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'}
+&gt;&gt;&gt; print(student)   # 重复的元素被自动去掉
+{'Jim', 'Jack', 'Mary', 'Tom', 'Rose'}
+&gt;&gt;&gt; 'Rose' in student  # membership testing（成员测试）
+True
+&gt;&gt;&gt; # set可以进行集合运算
+... 
+&gt;&gt;&gt; a = set('abracadabra')
+&gt;&gt;&gt; b = set('alacazam')
+&gt;&gt;&gt; a
+{'a', 'b', 'c', 'd', 'r'}
+&gt;&gt;&gt; a - b     # a和b的差集
+{'b', 'd', 'r'}
+&gt;&gt;&gt; a | b     # a和b的并集
+{'l', 'm', 'a', 'b', 'c', 'd', 'z', 'r'}
+&gt;&gt;&gt; a &amp; b     # a和b的交集
+{'a', 'c'}
+&gt;&gt;&gt; a ^ b     # a和b中不同时存在的元素
+{'l', 'm', 'b', 'd', 'z', 'r'}
+</code></pre>
+<h3 id="dictionaries字典">Dictionaries(字典)</h3>
+<ul>
+<li>字典是python中另一个非常有用的内置数据类型。</li>
+<li>字典是一种映射类型(mapping type),他是一个无序的键：值对集合。</li>
+<li>关键词必须使用不可变类型，也就是说list和包含可变类型的tuple不能做关键字。</li>
+<li>在同一个字典中，关键字还必须互不相同</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; dic = {}  # 创建空字典
+&gt;&gt;&gt; tel = {'Jack':1557, 'Tom':1320, 'Rose':1886}
+&gt;&gt;&gt; tel
+{'Tom': 1320, 'Jack': 1557, 'Rose': 1886}
+&gt;&gt;&gt; tel['Jack']   # 主要的操作：通过key查询
+1557
+&gt;&gt;&gt; del tel['Rose']  # 删除一个键值对
+&gt;&gt;&gt; tel['Mary'] = 4127  # 添加一个键值对
+&gt;&gt;&gt; tel
+{'Tom': 1320, 'Jack': 1557, 'Mary': 4127}
+&gt;&gt;&gt; list(tel.keys())  # 以list形式返回所有的key
+['Tom', 'Jack', 'Mary']
+&gt;&gt;&gt; sorted(tel.keys()) # 按key排序
+['Jack', 'Mary', 'Tom']
+&gt;&gt;&gt; 'Tom' in tel       # 成员测试
+True
+&gt;&gt;&gt; 'Mary' not in tel  # 成员测试
+False
+</code></pre>
+<ul>
+<li>构造函数dict()直接从键值对sequence中构造字典，推导如下：</li>
+</ul>
+<pre><code class="language-python line-numbers">&gt;&gt;&gt; dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+{'jack': 4098, 'sape': 4139, 'guido': 4127}
+
+&gt;&gt;&gt; {x: x**2 for x in (2, 4, 6)}
+{2: 4, 4: 16, 6: 36}
+
+&gt;&gt;&gt; dict(sape=4139, guido=4127, jack=4098)
+{'jack': 4098, 'sape': 4139, 'guido': 4127}
+</code></pre>
+<p>注意：</p>
+<ol>
+<li>字典是一种映射类型，它的元素是键值对。</li>
+<li>字典的关键字必须为不可变类型，且不能重复。</li>
+<li>创建空字典使用{ }。</li>
+</ol>
+<h1 id="python学习笔记">Python学习笔记</h1>
+<h2 id="python3解释器">Python3解释器</h2>
+<ul>
+<li>交互式编程</li>
+<li>脚本式编程</li>
+</ul>
+<h2 id="python3注释">Python3注释</h2>
+<p>单行注释  开头加 #</p>
+<pre><code class="language-python line-numbers"><br /># print(hallo,python)
+
+
+多行注释   ’‘’...'''  或 """..."""
+
+</code></pre>
+<pre><code class="language-python line-numbers">print(hallo,python)
+print(hallo,python)
+print(hallo,python)
+'''
+或
+"""
+print(hallo,python)
+print(hallo,python)
+print(hallo,python)
+"""
+</code></pre>
+<h2 id="python3运算符">Python3运算符</h2>
+<h3 id="算数运算符">算数运算符</h3>
+<h2 id="precode-classlanguage-python-line-numbers"><pre><code class="language-python line-numbers">+</h2>
+<ul>
+<li></li>
+</ul>
+<p>/<br>
+%<br>
+** # a**b 幂_返回x的y次幂<br>
+// # 取整除_返回商的整数部分<br>
+</code></pre></p>
+<h3 id="比较运算符">比较运算符</h3>
+<pre><code class="language-python line-numbers">==
+!=
+&gt;
+&lt;
+&gt;=
+&lt;=
+</code></pre>
+<h3 id="赋值运算符">赋值运算符</h3>
+<pre><code class="language-python line-numbers">=
++=
+-=
+*=
+/=
+%=
+**=
+//=
+</code></pre>
+<h3 id="位运算符">位运算符</h3>
+<p>按位运算符十八数字看做二进制来进行计算的，Python中的按位运算法则如下：</p>
+<pre><code class="language-python line-numbers">&amp; # 按位与运算符
+| # 按位或运算符
+^ # 按位异或运算符
+~ # 按位取反运算符
+&lt;&lt; #左移动运算符
+&gt;&gt; # 右移动运算符
+
+#举例
+
+#!/usr/bin/python3
+#coding=utf-8
+
+a = 60            # 60 = 0011 1100
+b = 13            # 13 = 0000 1101
+c = 0
+
+c = a &amp; b;        # 12 = 0000 1100
+print ("1 - c 的值为：", c)
+
+c = a | b;        # 61 = 0011 1101
+print ("2 - c 的值为：", c)
+
+c = a ^ b;        # 49 = 0011 0001
+print ("3 - c 的值为：", c)
+
+c = ~a;           # -61 = 1100 0011
+print ("4 - c 的值为：", c)
+
+c = a &lt;&lt; 2;       # 240 = 1111 0000
+print ("5 - c 的值为：", c)
+
+c = a &gt;&gt; 2;       # 15 = 0000 1111
+print ("6 - c 的值为：", c)
+</code></pre>
+<h3 id="逻辑运算符">逻辑运算符</h3>
+<pre><code class="language-python line-numbers">and # 布尔“与”
+or # 布尔”或“
+not # 布尔”非“
+
+# 举例
+
+#!/usr/bin/python3
+#coding=utf-8
+
+a = 10
+b = 20
+
+if ( a and b ):
+   print ("1 - 变量 a 和 b 都为 true")
+else:
+   print ("1 - 变量 a 和 b 有一个不为 true")
+
+if ( a or b ):
+   print ("2 - 变量 a 和 b 都为 true，或其中一个变量为 true")
+else:
+   print ("2 - 变量 a 和 b 都不为 true")
+
+# 修改变量 a 的值
+a = 0
+if ( a and b ):
+   print ("3 - 变量 a 和 b 都为 true")
+else:
+   print ("3 - 变量 a 和 b 有一个不为 true")
+
+if ( a or b ):
+   print ("4 - 变量 a 和 b 都为 true，或其中一个变量为 true")
+else:
+   print ("4 - 变量 a 和 b 都不为 true")
+
+if not( a and b ):
+   print ("5 - 变量 a 和 b 都为 false，或其中一个变量为 false")
+else:
+   print ("5 - 变量 a 和 b 都为 true")
+</code></pre>
+<h3 id="成员运算符">成员运算符</h3>
+<pre><code class="language-python line-numbers">in # 如果在指定的序列中找值返回True，否则返回False
+not in # 指定的
+
+# 举例
+
+#!/usr/bin/python3
+#coding=utf-8
+a = 10
+b = 20
+list = [1, 2, 3, 4, 5 ];
+
+if ( a in list ):
+   print ("1 - 变量 a 在给定的列表中 list 中")
+else:
+   print ("1 - 变量 a 不在给定的列表中 list 中")
+
+if ( b not in list ):
+   print ("2 - 变量 b 不在给定的列表中 list 中")
+else:
+   print ("2 - 变量 b 在给定的列表中 list 中")
+
+# 修改变量 a 的值
+a = 2
+if ( a in list ):
+   print ("3 - 变量 a 在给定的列表中 list 中")
+else:
+   print ("3 - 变量 a 不在给定的列表中 list 中")
+</code></pre>
+<h3 id="身份运算符">身份运算符</h3>
+<p>身份运算符为了比较两个对象的存储单元</p>
+<pre><code class="language-python line-numbers">is #is是判断两个标识符是不是引自同一个对象 x is y, 如果 id(x) 等于 id(y) , is 返回结果 1
+
+is not  #is not是判断两个标识符是不是引用自不同对象，x is not y, 如果 id(x) 不等于 id(y). is not 返回结果 1
+</code></pre>
+<pre><code class="language-python line-numbers">#举例
+#!/usr/bin/python3
+#coding=utf-8
+
+a = 20
+b = 20
+
+if ( a is b ):
+   print ("1 - a 和 b 有相同的标识")
+else:
+   print ("1 - a 和 b 没有相同的标识")
+
+if ( id(a) == id(b) ):
+   print ("2 - a 和 b 有相同的标识")
+else:
+   print ("2 - a 和 b 没有相同的标识")
+
+# 修改变量 b 的值
+b = 30
+if ( a is b ):
+   print ("3 - a 和 b 有相同的标识")
+else:
+   print ("3 - a 和 b 没有相同的标识")
+
+if ( a is not b ):
+   print ("4 - a 和 b 没有相同的标识")
+else:
+   print ("4 - a 和 b 有相同的标识")
+
+
+
+   #输出结果
+# 1 - a 和 b 有相同的标识
+# 2 - a 和 b 有相同的标识
+# 3 - a 和 b 没有相同的标识
+# 4 - a 和 b 没有相同的标识
+</code></pre>
+<h3 id="运算符优先级">运算符优先级</h3>
+<table>
+<thead>
+<tr>
+  <th>运算符</th>
+  <th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>**</td>
+  <td>指数（最高优先级）</td>
+</tr>
+<tr>
+  <td>~ + —</td>
+  <td>按位翻转，一元加减</td>
+</tr>
+<tr>
+  <td>* / % //</td>
+  <td>乘，除，取模和取整除</td>
+</tr>
+<tr>
+  <td>+ -</td>
+  <td>加法减法</td>
+</tr>
+<tr>
+  <td>&lt;&lt; >></td>
+  <td>右移，左移</td>
+</tr>
+<tr>
+  <td>&amp;</td>
+  <td>位‘AND’</td>
+</tr>
+<tr>
+  <td>^  和一个竖杠</td>
+  <td>位运算符</td>
+</tr>
+<tr>
+  <td>&lt;= &lt; > >=</td>
+  <td>比较运算符</td>
+</tr>
+<tr>
+  <td>&lt;> == !=</td>
+  <td>等于运算符</td>
+</tr>
+<tr>
+  <td>= %= /= //= -= += *= **=</td>
+  <td>赋值运算符</td>
+</tr>
+<tr>
+  <td>is is not</td>
+  <td>身份运算符</td>
+</tr>
+<tr>
+  <td>in not in</td>
+  <td>成员运算符</td>
+</tr>
+<tr>
+  <td>not or and</td>
+  <td>逻辑运算符</td>
+</tr>
+</tbody>
+</table>
+<h1 id="python">Python</h1>
+<ul>
+<li>input() ： 函数从控制台获取用户的一行输入，类似于scanf</li>
+<li>eval()： 去掉字符串s最外侧的引号，eval（）通常和input（）函数一起使用，来获取用户输入的数字</li>
+<li>print（）： 用于输出运算结果
+<ul>
+<li>1.输出字符串和变量</li>
+<li>2.仅用于输出一个或底盘个变量</li>
+<li>3.用于混合输出字符串与变量值
+<ul>
+<li>print(&lt;输出字符串模板&gt;.format(&lt;变量1&gt;,&lt;变量2&gt;,&lt;变量3&gt;))</li>
+<li>输出字符串模板中采用{}表示一个槽位置，每个槽位置对应.format()中的一个变量</li>
+</ul>
+</li>
+<li>print()函数输出文本时默认会在最后增加一个换行，如果不希望在最后增加这个换行，或者希望输出文本后增加其他内容，可以对print()函数的end参数进行赋值
+<ul>
+<li>print(&lt;待输出内容&gt;，end“&lt;增加的输出结尾&gt;”)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="字符串">字符串</h2>
+<h3 id="字符串的索引">字符串的索引</h3>
+<ul>
+<li>&lt;字符串或字符串变量&gt;[序号]</li>
+</ul>
+<h3 id="字符串的切片">字符串的切片</h3>
+<ul>
+<li>&lt;字符串或字符变量&gt;[N:M]</li>
+</ul>
+<h3 id="format">format()</h3>
+<ul>
+<li>&lt;模板字符串&gt;.format&lt;&quot;逗号分隔的参数&quot;&gt;</li>
+<li>格式控制：</li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; &quot;{0:-^25}&quot;.format(a)
+'----------我叫邓林哲----------'
+</code></pre>
+<h3 id="槽中格式控制标记的字段">槽中格式控制标记的字段：</h3>
+<table>
+<thead>
+<tr>
+<th>:</th>
+<th>&lt;填充&gt;</th>
+<th>&lt;对齐&gt;</th>
+<th>&lt;宽度&gt;</th>
+<th>&lt;，&gt;</th>
+<th>&lt;.精度&gt;</th>
+<th>&lt;类型&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>引导符号</td>
+<td>用于填充的单个字符</td>
+<td>&lt;左对齐,&gt;右对齐,^居中对齐</td>
+<td>槽的设定输出宽度</td>
+<td>数字的千位分隔符，适用于整数和浮点数</td>
+<td>浮点数小数部分的精度或字符串的最大输出长度</td>
+<td>整数类型：b,c,d,o,x,X,浮点数类型：e,E,f,%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串处理函数">字符串处理函数</h3>
+<ul>
+<li>len(x):返回字符串x的长度，也可以返回其他组合数据类型的元素</li>
+<li>str(x):返回任意类型x所对应的字符串</li>
+<li>chr(x):返回Unicode编码对应x对应的字符串</li>
+<li>ord(x)：返回单字符x表示的Unicode编码</li>
+<li>hex(x):返回整数x对应十六进制数的小写形式字符串</li>
+<li>oct(x):返回整数x对应八进制数的小写形式字符串</li>
+</ul>
+<h3 id="字符串处理方法">字符串处理方法</h3>
+<ul>
+<li>str.lower():返回字符串str的副本，全部小写</li>
+<li>str.upper():返回字符串str的副本，全部大写</li>
+<li>str.split(sep):返回一个列表,由str根据sep被分隔的部分构成,省略sep默认以空格分隔</li>
+<li>str.count(sub):返回sub子串出现的次数</li>
+<li>str.replace(old,new):返回字符串str的副本,所有old子串被替换为new</li>
+<li>str.center(width,fillchar):字符串居中函数,fillchar参数可选</li>
+<li>str.strip(chars):从字符串str中去掉在其左侧和右侧chars中列出的字符  //strip:剥去</li>
+<li>str.join(iter):将iter变量的每一个元素后增加一个str字符串</li>
+</ul>
+<h2 id="程序的循环结构">程序的循环结构</h2>
+<ul>
+<li>for循环</li>
+</ul>
+<pre><code class="language-python">for &lt;循环变量&gt; in &lt;遍历结构&gt;
+	&lt;语句块&gt;
+</code></pre>
+<ul>
+<li>range():可以指定语句块的循环次=</li>
+</ul>
+<pre><code class="language-python">for &lt;循环结构&gt; in range(&lt;循环次数&gt;)
+	&lt;语句块&gt;
+</code></pre>
+<ul>
+<li>无限循环:while</li>
+</ul>
+<pre><code class="language-python">while &lt;语句&gt;
+	&lt;语句块&gt;
+</code></pre>
+<ul>
+<li>循环控制:break和continue
+<ul>
+<li>break:跳出循环体</li>
+<li>continue:跳过本次循环</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数的定义">函数的定义</h2>
+<pre><code class="language-python">def &lt;函数名&gt; (&lt;参数列表&gt;)
+	&lt;函数体&gt;
+	return &lt;返回值列表&gt;
+</code></pre>
+<h3 id="函数的使用">函数的使用</h3>
+<ol>
+<li>函数定义</li>
+<li>函数调用</li>
+<li>函数执行</li>
+<li>函数返回</li>
+</ol>
+<pre><code class="language-python">print(&lt;函数名&gt;(&lt;参数列表&gt;))
+</code></pre>
+<h3 id="函数的参数传递">函数的参数传递</h3>
+<pre><code class="language-python">def &lt;函数名&gt;(&lt;非可选参数列表&gt;,&lt;可选参数&gt; = &lt;默认值&gt;)
+	&lt;函数体&gt;
+	return &lt;返回值列表&gt;
+</code></pre>
+<h3 id="变量的作用域">变量的作用域</h3>
+<ul>
+<li>全局变量定义: global&lt;全局变量&gt;</li>
+</ul>
+<h2 id="文件">文件</h2>
+<h3 id="文件的打开和关闭">文件的打开和关闭</h3>
+<pre><code class="language-python">&lt;变量名&gt; = open(&lt;文件路径及文件名&gt;,&lt;打开模式&gt;)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>r</th>
+<th>w</th>
+<th>x</th>
+<th>a</th>
+<th>b</th>
+<th>t</th>
+<th>+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>只读模式</td>
+<td>覆盖写模式,文件不存在则创建,存在则完全覆盖原文件</td>
+<td>创建写模式,文件不存在则创建</td>
+<td>追加写模式,文件不存在则创建,存在则在原文件最后追加内容</td>
+<td>二进制文件模式</td>
+<td>文本文件模式</td>
+<td>与r/w/x/a一同使用,在原功能基础上增加同时读写功能</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>文件使用结束后要用close()方法关闭文件,释放文件的使用授权</li>
+</ul>
+<pre><code class="language-python">&lt;变量名&gt;.close()
+</code></pre>
+<h3 id="文件的读">文件的读</h3>
+<ul>
+<li>f.read():从文件中读入整个文件内容</li>
+<li>f.readline():从文件中读入一行内容</li>
+<li>f.readlines():从文件中读入所有行,以每行为元素形成一个列表</li>
+<li>f.seek():改变当前文件操作指针的位置,0为文件开头,2为文件结尾</li>
+</ul>
+<h3 id="文件的写">文件的写</h3>
+<ul>
+<li>f.write():向文件写入一个字符串或字节流</li>
+<li>f.writelines():讲一个元素为字符串的<em><strong>列表</strong></em>整体写入文件</li>
+</ul>
+<h3 id="一维数据的存储">一维数据的存储</h3>
+<ul>
+<li>xxx.csv : 一种通用的,相对简单的文件格式</li>
+</ul>
+<pre><code class="language-python">#coding=utf-8
+ls = ['北京','上海','天津','重庆']
+f = open(&quot;city.csv&quot;,&quot;w+&quot;)
+f.write(&quot;,&quot;.join(ls)+&quot;\n&quot;)
+f.close
+</code></pre>
+<h3 id="一维数据的处理">一维数据的处理</h3>
+<pre><code class="language-python">f = open(&quot;/Users/denglinzhe/Desktop/city.csv&quot;,&quot;r+&quot;)
+ls = f.read().strip('\n').split(',')
+f.close()
+print(ls)
+
+</code></pre>
+<h3 id="二维数据的存储">二维数据的存储</h3>
+<pre><code class="language-python">#coding=utf-8
+
+# ls代表二维列表,此处省略
+f = open(&quot;xxx.csv&quot;,&quot;w+&quot;)
+for row in ls:
+	f.write(&quot;,&quot;.join(row)+&quot;\n&quot;)
+f.close()
+
+</code></pre>
+<h3 id="二维数据的处理">二维数据的处理</h3>
+<h4 id="从csv文件读入数据的方法">从CSV文件读入数据的方法</h4>
+<pre><code class="language-python">f = open(&quot;xxx.csv&quot;,&quot;r+&quot;)
+ls = []
+for line in f:
+	ls.append(line.strip('\n').split(','))
+</code></pre>
+<h4 id="二维列表的操作">二维列表的操作</h4>
+<pre><code class="language-python">#coding=utf-8
+
+#此处省略去从CSV获取到二维列表ls
+
+for row in ls:
+	line = &quot;&quot;
+	for item in row:
+		line += &quot;{:10}\t&quot;.format(item)
+	print(line)
+
+</code></pre>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2019.06.18</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li><a href="#python3-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">Python3 学习笔记</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">基本数据类型</a></li>
+<li><a href="#6-dictionaries%E5%AD%97%E5%85%B8">6. Dictionaries（字典）</a>
+<ul>
+<li><a href="#number">Number</a></li>
+<li><a href="#string">String</a></li>
+<li><a href="#list%E5%88%97%E8%A1%A8">List（列表）</a></li>
+<li><a href="#tuple%E5%85%83%E7%BB%84">Tuple（元组）</a></li>
+<li><a href="#sets%E9%9B%86%E5%90%88">Sets(集合)</a></li>
+<li><a href="#dictionaries%E5%AD%97%E5%85%B8">Dictionaries(字典)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">Python学习笔记</a>
+<ul>
+<li><a href="#python3%E8%A7%A3%E9%87%8A%E5%99%A8">Python3解释器</a></li>
+<li><a href="#python3%E6%B3%A8%E9%87%8A">Python3注释</a></li>
+<li><a href="#python3%E8%BF%90%E7%AE%97%E7%AC%A6">Python3运算符</a>
+<ul>
+<li><a href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6">算数运算符</a></li>
+</ul>
+</li>
+<li><a href="#precode-classlanguage-python-line-numbers"><pre><code class="language-python line-numbers">+</a>
+<ul>
+<li><a href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6">比较运算符</a></li>
+<li><a href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6">赋值运算符</a></li>
+<li><a href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6">位运算符</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6">逻辑运算符</a></li>
+<li><a href="#%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6">成员运算符</a></li>
+<li><a href="#%E8%BA%AB%E4%BB%BD%E8%BF%90%E7%AE%97%E7%AC%A6">身份运算符</a></li>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7">运算符优先级</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#python">Python</a>
+<ul>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串</a>
+<ul>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%B4%A2%E5%BC%95">字符串的索引</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%87%E7%89%87">字符串的切片</a></li>
+<li><a href="#format">format()</a></li>
+<li><a href="#%E6%A7%BD%E4%B8%AD%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6%E6%A0%87%E8%AE%B0%E7%9A%84%E5%AD%97%E6%AE%B5">槽中格式控制标记的字段：</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0">字符串处理函数</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95">字符串处理方法</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84">程序的循环结构</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89">函数的定义</a>
+<ul>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8">函数的使用</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92">函数的参数传递</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F">变量的作用域</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E4%BB%B6">文件</a>
+<ul>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%93%E5%BC%80%E5%92%8C%E5%85%B3%E9%97%AD">文件的打开和关闭</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB">文件的读</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%9A%84%E5%86%99">文件的写</a></li>
+<li><a href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8">一维数据的存储</a></li>
+<li><a href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%84%E7%90%86">一维数据的处理</a></li>
+<li><a href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8">二维数据的存储</a></li>
+<li><a href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A4%84%E7%90%86">二维数据的处理</a>
+<ul>
+<li><a href="#%E4%BB%8Ecsv%E6%96%87%E4%BB%B6%E8%AF%BB%E5%85%A5%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95">从CSV文件读入数据的方法</a></li>
+<li><a href="#%E4%BA%8C%E7%BB%B4%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C">二维列表的操作</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>使用nodecache的cdn加速Github Pages - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="由于域名未备案，加之githubpage国内访问速度缓慢，突发奇想，有没有香港节点的cdn呢，上网一搜 哈哈哈哈哈哈哈，果然有。
+本人博客为个人博客，月访问流量极小，所以用cdn也不是很贵，官方给出的中国大陆直连的报价的1G 1块钱人民币，...">
+
+  <meta property="og:title" content="使用nodecache的cdn加速Github Pages - integererer">
+  <meta property="og:description" content="由于域名未备案，加之githubpage国内访问速度缓慢，突发奇想，有没有香港节点的cdn呢，上网一搜 哈哈哈哈哈哈哈，果然有。
+本人博客为个人博客，月访问流量极小，所以用cdn也不是很贵，官方给出的中国大陆直连的报价的1G 1块钱人民币，...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/shi-yong-nodecache-de-cdn-jia-su-github-pages/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="使用nodecache的cdn加速Github Pages">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/shi-yong-nodecache-de-cdn-jia-su-github-pages">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">使用nodecache的cdn加速Github Pages</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2020.08.07</div>
+          <div class="flex justify-center mt-4">
+            
+              <a href="https://denglinzhe.com/tags/网站" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>网站
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <p>由于域名未备案，加之githubpage国内访问速度缓慢，突发奇想，有没有香港节点的cdn呢，上网一搜 哈哈哈哈哈哈哈，果然有。<br>
+本人博客为个人博客，月访问流量极小，所以用cdn也不是很贵，官方给出的中国大陆直连的报价的1G 1块钱人民币，嗯，相比与国内服务商来说是有点贵了，但是谁让咱没备案呢。<br>
+设置：</p>
+<ul>
+<li>加速域名：使用的域名如：denglinzhe.com、www.denglinzhe.com</li>
+<li>回源ip：github pages的ip地址：（注意端口选择）</li>
+</ul>
+<pre><code>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+</code></pre>
+<ul>
+<li>回源host***(注意：这里一定要写，在这里出错了好半天，给我整理自闭了都)***：hardisonxxx.github.io</li>
+<li>若使用HTTPS协议记得添加ssl证书以及开启ssl服务</li>
+</ul>
+<p>由于以前是在国内有个服务器来搭建博客的，服务器中只有一个网站，所以回源host不用写也能指定到唯一网站，但是github不一样啊，在github服务器上绑定了很多pages，不指定回源host肯定访问不了你的博客啊，仔细推理后的我眼泪掉下来。。</p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2021.04.09</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

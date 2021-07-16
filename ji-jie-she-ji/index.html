@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>机械设计 - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="
+    
+    
+
+第一章
+
+机械零件常见的失效形式有：	整体断裂、过大的变形、表面破坏、破坏正常工作条件引起的失效。
+机械设计准则的“三化”：
+
+
+产品的标准化包括三个方面的含义
+
+产品品种规格的系列化
+零部件的通用化
+以及产品质量的...">
+
+  <meta property="og:title" content="机械设计 - integererer">
+  <meta property="og:description" content="
+    
+    
+
+第一章
+
+机械零件常见的失效形式有：	整体断裂、过大的变形、表面破坏、破坏正常工作条件引起的失效。
+机械设计准则的“三化”：
+
+
+产品的标准化包括三个方面的含义
+
+产品品种规格的系列化
+零部件的通用化
+以及产品质量的...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/ji-jie-she-ji/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="机械设计">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/ji-jie-she-ji">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">机械设计</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2019.08.13</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <html>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</html>
+<h2 id="第一章">第一章</h2>
+<ol>
+<li>机械零件常见的失效形式有：	整体断裂、过大的变形、表面破坏、破坏正常工作条件引起的失效。</li>
+<li>机械设计准则的“三化”：</li>
+</ol>
+<ul>
+<li>产品的标准化包括三个方面的含义
+<ul>
+<li>产品品种规格的系列化</li>
+<li>零部件的通用化</li>
+<li>以及产品质量的标准化。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>大小和方向不随时间变化或缓慢变化的载荷称为静载荷，随时间变化的载荷称为变载荷。</li>
+<li></li>
+</ol>
+<ul>
+<li>
+<p>平均应力：<br>
+$$\sigma_m=\frac{\sigma_{max}+\sigma_{min}}{2}$$</p>
+</li>
+<li>
+<p>应力幅：<br>
+$$\sigma_a=\frac{\sigma_{max}-\sigma_{min}}{2}$$</p>
+</li>
+<li>
+<p>将 $\sigma_a=\sigma_m$ 的应力视为：脉动循环应力。</p>
+</li>
+</ul>
+<h2 id="第六章">第六章</h2>
+<ol>
+<li>
+<p>螺纹的主要参数用途：</p>
+<ol>
+<li>大径$d$ = 公称直径</li>
+<li>小径$d_1$ = 危险截面（强度计算）</li>
+<li>中径$d_2$ = 几何计算</li>
+</ol>
+</li>
+<li>
+<p>螺纹的类型：<br>
+$$<br>
+螺纹牙型<br>
+\begin{cases}<br>
+三角形螺纹\<br>
+梯形螺纹\<br>
+锯齿形螺纹\<br>
+圆弧形螺纹\<br>
+矩形螺纹\<br>
+\end{cases}<br>
+$$</p>
+</li>
+</ol>
+<p>$$<br>
+螺旋线绕行方向<br>
+\begin{cases}<br>
+右旋螺纹\<br>
+左旋螺纹\<br>
+\end{cases}<br>
+$$</p>
+<p>$$<br>
+螺旋线的线数<br>
+\begin{cases}<br>
+单线螺纹\<br>
+双线螺纹\<br>
+多线螺纹\<br>
+\end{cases}<br>
+$$</p>
+<p>$$<br>
+螺纹所处的位置<br>
+\begin{cases}<br>
+内螺纹\<br>
+外螺纹\<br>
+\end{cases}<br>
+$$</p>
+<p>$$<br>
+用途不同(作用)<br>
+\begin{cases}<br>
+连接螺纹\<br>
+传动螺纹\<br>
+\end{cases}<br>
+$$</p>
+<ol start="3">
+<li>
+<p>螺纹连接的基本类型及应用:</p>
+<ol>
+<li>螺栓连接
+<ul>
+<li>普通螺栓连接:被连接件为光孔,无须切制内螺纹,所以结构简单.拆装方便</li>
+<li>铰制孔用螺栓连接:铰制孔用螺栓连接的被连接键上为铰制孔,主要用于传递横向载荷</li>
+</ul>
+</li>
+<li>双头螺柱连接
+<ul>
+<li>特点:连个被连接件中,有一个被连接键上需切制螺纹孔,另一被连接键上切制光孔</li>
+</ul>
+</li>
+<li>螺钉连接
+<ul>
+<li>特点:与双头螺柱类似,但是不需要螺母</li>
+</ul>
+</li>
+<li>紧钉螺钉连接</li>
+<li>其他螺纹连接</li>
+</ol>
+</li>
+<li>
+<p>螺纹连接中标准件:</p>
+<ul>
+<li>螺栓</li>
+<li>双头螺柱</li>
+<li>螺钉</li>
+<li>螺母</li>
+<li>垫圈</li>
+</ul>
+</li>
+<li>
+<p>螺纹连接的预紧与防松</p>
+<ul>
+<li>预紧
+<ol>
+<li>预紧的目的:预紧使被连接件的结合面之间压力增大,因此提高了连接的可靠性和紧密性</li>
+<li>预紧力的确定原则:拧紧后螺纹连接件的预紧应力不得超过其材料屈服点$\sigma_s$的80%</li>
+<li>预紧力的控制(方法):通常采用<em><strong>测力矩扳手</strong></em>或<em><strong>定力矩扳手</strong></em>对于重要的螺栓连接,也可以采用<em><strong>螺栓伸长</strong></em>的方法来控制预紧力</li>
+</ol>
+</li>
+<li>防松
+<ol>
+<li>防松的目的:防止螺纹副间的相对转动</li>
+<li>方式方法及例举结构:
+<ol>
+<li>摩擦防松:对顶螺母/弹簧垫圈/自锁螺母</li>
+<li>机械防松:开口销与开槽螺母/止动垫圈/串联钢丝</li>
+<li>永久防松</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>单个螺栓连接的强度计算</p>
+<ul>
+<li>习题册两道计算题</li>
+</ul>
+</li>
+<li>
+<p>采用双螺母的目的是: <em><strong>防松</strong></em></p>
+</li>
+<li>
+<p>螺纹公称直径.牙形角,线数相同时,细牙螺纹的效率小于粗牙螺纹的效率</p>
+</li>
+<li>
+<p>三角形螺纹的牙型角为60°,适用于连接,而梯形螺纹的牙型角为30°,适用于传动</p>
+</li>
+<li>
+<p>螺纹连接的拧紧力矩等于<em><strong>螺纹力矩</strong></em>和<em><strong>螺纹摩擦力矩</strong></em>之和</p>
+</li>
+<li>
+<p>承受横向工作载荷的普通螺栓连接,螺栓受<em><strong>拉应力和扭转切应力</strong></em>作用,可能发生的失效形式是<em><strong>拉断,扭转</strong></em></p>
+</li>
+<li>
+<p>承受横向工作载荷的铰制孔用螺栓连接,靠螺栓受<em><strong>挤压和剪切</strong></em>来传递载荷,可能发生的失效形式是<em><strong>螺杆被剪断,孔壁被压溃</strong></em></p>
+</li>
+<li>
+<p>螺纹连接件的许用拉应力</p>
+</li>
+</ol>
+<p>$$<br>
+[\sigma]=\frac{\sigma_s}{s}<br>
+$$</p>
+<ol start="14">
+<li>螺纹连接件的许用剪应力</li>
+</ol>
+<p>$$<br>
+[\tau]=\frac{\sigma_s}{s_t}<br>
+$$</p>
+<ol start="15">
+<li>螺纹连接件的许用挤压应力<br>
+$$<br>
+[\sigma_p]=\frac{\sigma_s}{s_p}<br>
+$$<br>
+(被连接件为钢)</li>
+</ol>
+<p>$$<br>
+[\sigma_p]=\frac{\sigma_b}{s_p}<br>
+$$<br>
+(被连接件为铸铁)</p>
+<ol start="16">
+<li>螺栓:10个性能等级</li>
+<li>螺母:7个等级,与螺栓性能相匹配</li>
+</ol>
+<h2 id="第七章-带传动和链传动">第七章  带传动和链传动</h2>
+<ol>
+<li>有效拉力的定义:紧边与松边拉力之差称为带传动的有效拉力$F_e$</li>
+</ol>
+<p>$$<br>
+F_e=F_1-F_2<br>
+$$</p>
+<ol start="2">
+<li>
+<p>影响最大有效拉力的因素</p>
+<ol>
+<li>预紧力$F_0$</li>
+<li>包角$\alpha$</li>
+<li>摩擦系数$f$</li>
+</ol>
+</li>
+<li>
+<p>带传动的应力分析  P103</p>
+<ul>
+<li>拉应力$\sigma$   \（其中 A = 带的截面积$mm^2$\）  $\sigma=\frac{F}{A}$</li>
+<li>弯曲应力$\sigma_b$</li>
+<li>离心拉应力$\sigma_c$</li>
+</ul>
+</li>
+<li>
+<p>最大应力:在紧边开始绕上小带轮的位置</p>
+</li>
+</ol>
+<p>$$<br>
+\sigma_{max} \approx \sigma_1+\sigma_{b1}+\sigma_c<br>
+$$</p>
+<ol start="5">
+<li>
+<p>弹性滑动和打滑</p>
+<ul>
+<li>弹性滑动:带与带轮间微量滑动(无法避免) 主动$V_1$&gt;从动$V_2$</li>
+<li>打滑:带与带轮之间的显著滑动(可以避免)  过载</li>
+</ul>
+</li>
+<li>
+<p>带传动依靠带轮与张紧其上带之间的<em><strong>摩擦力</strong></em>进行工作,能缓和<em><strong>冲击</strong></em>,吸收<em><strong>震动</strong></em>,中心距可以较<em><strong>大</strong></em></p>
+</li>
+<li>
+<p>带传动的主要失效形式为<em><strong>打滑</strong></em>和<em><strong>疲劳破坏</strong></em></p>
+</li>
+<li>
+<p>带传动工作时由于存在<em><strong>弹性滑动</strong></em>,主,从动轮的转速比不能保持准确</p>
+</li>
+<li>
+<p>V带传动中,带的<em><strong>两侧</strong></em>是工作面,属<em><strong>槽面摩擦</strong></em>,摩擦较平带传动<em><strong>大</strong></em></p>
+</li>
+<li>
+<p>小带轮直径越小,带的弯曲应力越<em><strong>大</strong></em>,使用寿命约<em><strong>小</strong></em></p>
+</li>
+<li>
+<p>V带传动的张紧装置</p>
+<ol>
+<li>定期张紧装置</li>
+<li>自动张紧装置</li>
+<li>采用张紧轮的张紧装置</li>
+</ol>
+</li>
+</ol>
+<h2 id="第八章-齿轮传动">第八章 齿轮传动</h2>
+<ol>
+<li>
+<p>齿轮的失效形式</p>
+<ul>
+<li>齿轮折断</li>
+<li>齿面点蚀</li>
+<li>齿面胶合</li>
+<li>齿面磨损</li>
+<li>齿面塑性变形</li>
+</ul>
+</li>
+<li>
+<p>齿轮的设计准则</p>
+<ul>
+<li>开式齿轮传动:根据齿根弯曲疲劳强度设计,将结果放大5%~15%</li>
+<li>闭式齿轮传动:
+<ul>
+<li>软齿面:根据齿面接触强度设计,校核齿根弯曲强度</li>
+<li>硬齿面:根据齿根弯曲弧度设计,校核齿面接触疲劳强度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>齿轮的材料热处理</p>
+<ul>
+<li>热处理方法
+<ul>
+<li>表面淬火   (高频淬火,火焰淬火)</li>
+<li>渗碳淬火</li>
+<li>调质</li>
+<li>正火</li>
+<li>渗碳</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>齿轮的受力分析 P165 (力的方向判断)</p>
+</li>
+<li>
+<p>齿轮传动的润滑</p>
+<ul>
+<li>润滑的目的:改善齿轮的工作状况,确保运转正常及预期的寿命</li>
+</ul>
+</li>
+</ol>
+<h2 id="第九章-蜗杆传动">第九章 蜗杆传动</h2>
+<ol>
+<li>
+<p>蜗杆的失效形式</p>
+<ul>
+<li>点蚀</li>
+<li>胶合</li>
+<li>磨损</li>
+</ul>
+</li>
+<li>
+<p>设计准则</p>
+<ul>
+<li>闭式传动:按蜗轮的齿面接触疲劳强度进行设计;之后校核蜗轮的齿根弯曲疲劳强度,并进行热平衡计算</li>
+<li>开式传动:通常只计算蜗轮的齿根弯曲疲劳强度</li>
+</ul>
+</li>
+<li>
+<p>蜗杆的传动效率/润滑和热平衡计算</p>
+<ol>
+<li>热平衡计算的目的:由于蜗杆传动效率低,发热量大,若不及时散热,会引起箱体内油温升高,润滑失效,导致齿轮磨损加剧,甚至出现胶合</li>
+<li>当$\bigtriangleup_t&gt;[\bigtriangleup_t]$超过温差允许值,冷却措施是:
+<ol>
+<li>增加散热面积</li>
+<li>提高表面传热系数</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="第十二章-滚动轴承">第十二章 滚动轴承</h2>
+<ol>
+<li>滚动轴承的类型代号和选择</li>
+<li>接触角的概念?????</li>
+<li>滚动轴承的代号  P236</li>
+<li>滚动轴承的寿命计算  P252  例12-4<br>
+$$<br>
+L_n=\frac{10^6}{60n}{(\frac{C}{P})}^\epsilon<br>
+$$</li>
+</ol>
+<p>$$<br>
+L_n=\frac{10^6}{60n}{(\frac{f_tC}{P})}^\epsilon<br>
+$$</p>
+<ol start="5">
+<li>
+<p>滚动轴承的配合  P257</p>
+<ul>
+<li>滚动轴承内孔与轴的配合采用<em><strong>基孔制</strong></em></li>
+<li>滚动轴承外径与座孔的配合采用<em><strong>基轴制</strong></em></li>
+</ul>
+</li>
+<li>
+<p>滚动轴承的密封:   P260~P262</p>
+<ul>
+<li>接触式密封
+<ol>
+<li>毡圈密封</li>
+<li>唇形密封圈密封</li>
+</ol>
+</li>
+<li>非接触式密封
+<ol>
+<li>间隙式密封</li>
+<li>迷宫式密封</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="第十三章-轴">第十三章 轴</h2>
+<ol>
+<li>
+<p>轴的分类</p>
+<ul>
+<li>转轴</li>
+<li>心轴</li>
+<li>传动轴</li>
+</ul>
+</li>
+<li>
+<p>轴的结构改错  P266</p>
+</li>
+<li>
+<p>轴的强度计算   P274</p>
+</li>
+<li>
+<p>轴毂连接	P280 P282 P284</p>
+<ul>
+<li>矩形花键采用小径定心;</li>
+<li>渐开线花键采用齿形定心</li>
+</ul>
+</li>
+</ol>
+<h1 id="背诵~">背诵~</h1>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<h2 id="第一章-2">第一章</h2>
+<ol>
+<li>机器一般由<em><strong>动力</strong></em>、<em><strong>传动</strong></em>、<em><strong>执行</strong></em>和<em><strong>控制部分</strong></em>组成</li>
+<li><em><strong>标准</strong></em>、<em><strong>系统</strong></em>和<em><strong>通用</strong></em>是机械设计所要求的三化</li>
+<li>机械零件常见的失效形式有<em><strong>整体断裂</strong></em>、<em><strong>过大的变形</strong></em>、<em><strong>表面破坏</strong></em>和<em><strong>破坏正常条件</strong></em>引起的失效等</li>
+<li>大小和方向不随时间变化或变化缓慢的称为<em><strong>静载荷</strong></em>，随时间变化的载荷称为<em><strong>变载荷</strong></em></li>
+<li>在静强度条件下，塑性材料的极限应力是<em><strong>屈服极限</strong></em>，而脆性材料的极限应力是<em><strong>强度极限</strong></em></li>
+</ol>
+<h2 id="第六章-2">第六章</h2>
+<ol start="11">
+<li>三角形螺纹的牙型角是<em><strong>60度</strong></em>，适用于<em><strong>连接</strong></em>，而梯形螺纹的牙型角为<em><strong>30度</strong></em>，适用于<em><strong>传动</strong></em></li>
+<li>普通螺纹连接的防松，按其防松原理分为<em><strong>摩擦</strong></em>防松，<em><strong>机械</strong></em>防松和<em><strong>永久</strong></em>防松</li>
+<li>普通螺纹的公称直径指的是螺纹的<em><strong>大径</strong></em>，计算螺纹的摩擦力矩时使用的是螺纹的<em><strong>中径</strong></em>，计算螺纹的微危险截面时使用的是螺纹的<em><strong>小径</strong></em></li>
+<li>螺纹连接的拧紧力矩等于<em><strong>摩擦力矩</strong></em>和<em><strong>螺纹力矩</strong></em>之和</li>
+<li><em><strong>三角形</strong></em>螺纹主要用于连接，而<em><strong>梯形</strong></em>螺纹主要用于传动</li>
+<li>承受横向工作载荷的普通螺栓连接，螺栓受<em><strong>拉应力</strong></em>和<em><strong>扭转切应力</strong></em>作用，可能发生的失效形式是<em><strong>拉断，扭转</strong></em></li>
+<li>承受横向工作载荷的铰制孔用螺栓连接，靠螺栓受<em><strong>挤压</strong></em>和<em><strong>剪切</strong></em>来传递载荷，可能发生的实效形式是<em><strong>螺管被剪断</strong></em>和<em><strong>孔壁被压溃</strong></em></li>
+</ol>
+<h2 id="第七章">第七章</h2>
+<ol>
+<li>带传动依靠带轮与张紧其上带之间的<em><strong>摩擦力</strong></em>进行工作，能缓和<em><strong>冲击</strong></em>，吸收<em><strong>震动</strong></em>，中心距可以较<em><strong>大</strong></em></li>
+<li>带传动的主要失效形式是<em><strong>打滑</strong></em>和<em><strong>疲劳破坏</strong></em></li>
+<li>带传动工作时由于存在<em><strong>弹性滑动现象</strong></em>，主从动轮的转速比不能保持准确</li>
+<li>V带传动中，带的<em><strong>两侧面</strong></em>是工作面，属于<em><strong>槽面式楔边</strong></em>摩擦，摩擦较平带传动<em><strong>大</strong></em></li>
+<li>小带轮主机越小，带的弯曲应力越<em><strong>大</strong></em>，使用寿命越<em><strong>小</strong></em></li>
+<li>带传动工作时的应力有<em><strong>弯曲应力</strong></em>，<em><strong>拉应力</strong></em>和<em><strong>离心拉应力</strong></em>，最大应力发生在<em><strong>紧边开始绕上小带轮的地方</strong></em></li>
+</ol>
+<h2 id="第八章">第八章</h2>
+<p>没有填空题</p>
+<h2 id="第九章">第九章</h2>
+<p>没有填空题</p>
+<h2 id="第十二章">第十二章</h2>
+<ol>
+<li>滚动轴承一般由<em><strong>内圈</strong></em>、<em><strong>外圈</strong></em>、<em><strong>滚动体</strong></em>和<em><strong>保持架</strong></em>组成，常见的滚动体形状有<em><strong>球</strong></em>、<em><strong>圆柱滚子</strong></em>、<em><strong>圆锥滚子</strong></em>和<em><strong>球面滚子</strong></em></li>
+<li>轴承的<em><strong>径向</strong></em>平面与<em><strong>滚动体</strong></em>和外圈滚道接触点的<em><strong>法</strong></em>线之间的夹角称为接触角，接触角越大，轴承承受轴向载荷的能力<em><strong>越大</strong></em></li>
+<li>滚动轴承在一定载荷和润滑条件下允许的最高转速称为<em><strong>极限</strong></em>转速。滚动轴承转速过高会使摩擦面间产生<em><strong>高温</strong></em>、润滑<em><strong>失效</strong></em>，导致滚动体<em><strong>回火</strong></em>或<em><strong>胶合</strong></em>损坏</li>
+<li>深沟球轴承主要承受<em><strong>径向</strong></em>载荷，也能承受一定的<em><strong>轴向</strong></em>载荷，当转速很高是，它可以代替<em><strong>角接触球轴承</strong></em></li>
+<li>滚动轴承的主要失效形式是<em><strong>疲劳破坏</strong></em>和<em><strong>塑性变形</strong></em></li>
+<li>滚动轴承的的基本额定寿命是指一批同型号的轴承，在相同的条件下运转，其中<em><strong>10%<em><strong>的轴承已发生疲劳点蚀，而</strong></em>90%<em><strong>的轴承尚未发生疲劳点蚀时所能达到的总转数字，用L10表示，单位为</strong></em>10^6转</strong></em></li>
+<li>一批同型号的滚动轴承，其<em><strong>基本额定</strong></em>寿命为<em><strong>10^6</strong></em>时所能承受的最大载荷称为轴承的基本额定动载荷，其值常用C表示，不同型号的轴承，基本额定动载荷<em><strong>不一样</strong></em></li>
+<li>滚动轴承外圈与轴承座的配合应为<em><strong>基轴制</strong></em>；滚动轴承内圈与轴的配合应为<em><strong>基孔制</strong></em></li>
+<li>滚动轴承拆装时不允许通过<em><strong>滚动体</strong></em>来传递拆装压力，为便于拆卸滚动轴承应具有足够的拆卸<em><strong>高度</strong></em></li>
+<li>滚动轴承轴伸处的密封装置有<em><strong>接触式</strong></em>和<em><strong>非接触式</strong></em>两大类，接触式密封要限制密封处的<em><strong>线速度</strong></em>，非接触式密封运用于较<em><strong>高的</strong></em>转速</li>
+</ol>
+<h2 id="第十三章">第十三章</h2>
+<ol>
+<li>如将轴类零件按受力方式分类，可将受<em><strong>弯矩</strong></em>作用的轴称为心轴，受<em><strong>扭矩</strong></em>作用的轴称为传动轴，受<em><strong>弯矩和转矩</strong></em>作用的轴称为转轴</li>
+<li>自行车的前轮是<em><strong>心</strong></em>轴，中间轴是<em><strong>转</strong></em>轴，后轮轴是<em><strong>心</strong></em>轴</li>
+</ol>
+<h2 id="公式">公式</h2>
+<h3 id="只受预紧力作用的紧螺栓连接的强度条件">只受预紧力作用的紧螺栓连接的强度条件</h3>
+<p>$$<br>
+\sigma_{ca}=\frac{1.3F_0}{\frac{\pi}{4}d_1^2}\leq[\sigma]<br>
+$$</p>
+<h3 id="螺栓总载荷">螺栓总载荷</h3>
+<p>$$<br>
+F_\sum=\frac{F_\sum}{z}<br>
+$$</p>
+<h3 id="许用应力">许用应力</h3>
+<p>$$<br>
+[\sigma]=\frac{\sigma_s}{S}<br>
+$$</p>
+<h3 id="螺栓总拉力">螺栓总拉力</h3>
+<p>$$<br>
+\sigma_{ca}=\frac{1.3F_2}{\frac{\pi}{4}d_1^2}\leq[\sigma]<br>
+$$</p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2019.08.13</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0">第一章</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0">第六章</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%B8%A6%E4%BC%A0%E5%8A%A8%E5%92%8C%E9%93%BE%E4%BC%A0%E5%8A%A8">第七章  带传动和链传动</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E9%BD%BF%E8%BD%AE%E4%BC%A0%E5%8A%A8">第八章 齿轮传动</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E8%9C%97%E6%9D%86%E4%BC%A0%E5%8A%A8">第九章 蜗杆传动</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E6%BB%9A%E5%8A%A8%E8%BD%B4%E6%89%BF">第十二章 滚动轴承</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E8%BD%B4">第十三章 轴</a></li>
+</ul>
+</li>
+<li><a href="#%E8%83%8C%E8%AF%B5~">背诵~</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-2">第一章</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-2">第六章</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0">第七章</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0">第八章</a></li>
+<li><a href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0">第九章</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0">第十二章</a></li>
+<li><a href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0">第十三章</a></li>
+<li><a href="#%E5%85%AC%E5%BC%8F">公式</a>
+<ul>
+<li><a href="#%E5%8F%AA%E5%8F%97%E9%A2%84%E7%B4%A7%E5%8A%9B%E4%BD%9C%E7%94%A8%E7%9A%84%E7%B4%A7%E8%9E%BA%E6%A0%93%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%BC%BA%E5%BA%A6%E6%9D%A1%E4%BB%B6">只受预紧力作用的紧螺栓连接的强度条件</a></li>
+<li><a href="#%E8%9E%BA%E6%A0%93%E6%80%BB%E8%BD%BD%E8%8D%B7">螺栓总载荷</a></li>
+<li><a href="#%E8%AE%B8%E7%94%A8%E5%BA%94%E5%8A%9B">许用应力</a></li>
+<li><a href="#%E8%9E%BA%E6%A0%93%E6%80%BB%E6%8B%89%E5%8A%9B">螺栓总拉力</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

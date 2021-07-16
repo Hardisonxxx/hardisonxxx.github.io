@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>Linux 目录与路径 - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="目录与路径
+绝对路径与相对路径
+
+绝对路径：由根目录开始写起 /home/dengdeng/.barasd
+相对路径：相对于目前路径的文件名写法  如 ../dengdeng
+
+目录的相关操作
+
+. 代表次层目录
+.. 代表上层目录
+
+
+代...">
+
+  <meta property="og:title" content="Linux 目录与路径 - integererer">
+  <meta property="og:description" content="目录与路径
+绝对路径与相对路径
+
+绝对路径：由根目录开始写起 /home/dengdeng/.barasd
+相对路径：相对于目前路径的文件名写法  如 ../dengdeng
+
+目录的相关操作
+
+. 代表次层目录
+.. 代表上层目录
+
+
+代...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/linux-mu-lu-yu-lu-jing/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="Linux 目录与路径">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/linux-mu-lu-yu-lu-jing">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">Linux 目录与路径</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2019.04.19</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <h1 id="目录与路径">目录与路径</h1>
+<h2 id="绝对路径与相对路径">绝对路径与相对路径</h2>
+<ul>
+<li>绝对路径：由根目录开始写起 /home/dengdeng/.barasd</li>
+<li>相对路径：相对于目前路径的文件名写法  如 ../dengdeng</li>
+</ul>
+<h2 id="目录的相关操作">目录的相关操作</h2>
+<ul>
+<li>. 代表次层目录</li>
+<li>.. 代表上层目录</li>
+<li>
+<ul>
+<li>代表前一个工作目录</li>
+</ul>
+</li>
+<li>~ 代表“目前身份用户”所在的home目录</li>
+<li>~dengdeng 代表dengdeng这个用户的家目录</li>
+<li>常见的目录操作指令
+<ul>
+<li>cd：变换目录（change directory）</li>
+<li>pwd：显示当前目录(print working directory)</li>
+<li>mkdir：建立一个新的目录
+<ul>
+<li>mkdir denglinzhe  //建立一个名为denglinzhe的文件夹</li>
+<li>mkdir -p /users/denglinzhe/one/two/three //系统会依次建立文件夹 直到 three</li>
+<li>mkdir -m 711 test // 赋予新建的test目录初始权限，权限为711 == drwx--x--x</li>
+</ul>
+</li>
+<li>rmdir：删除一个空的目录</li>
+</ul>
+</li>
+</ul>
+<h2 id="关于执行文件路径的变量-path">关于执行文件路径的变量 $PATH</h2>
+<h2 id="62-文件与目录的管理">6.2 文件与目录的管理</h2>
+<ul>
+<li>文件与目录的检视 ls
+<ul>
+<li>ls -a 全部的文件（连同隐藏文件一起显示出来）</li>
+<li>ls -d 仅仅列出目录本身</li>
+<li>ls -h 列出人们可以认识的容量大小 kb/gb</li>
+<li>ls -t 按照时间排序</li>
+</ul>
+</li>
+<li>复制 cp
+<ul>
+<li>cp eg:cp ~/desktop/章章.jpg /users/denglinzhe //将desktop里的章章.jpg文件移动到denglinzhe文件夹里</li>
+<li>-a 常用于复制文件夹</li>
+<li>-i 如果目标文件已经存在时，在覆盖时会问你是否覆盖</li>
+<li>-p 连同文件的属性（权限、用户、时间）一起复制过去</li>
+</ul>
+</li>
+<li>删除 rｍ</li>
+<li>移动 mv</li>
+<li></li>
+</ul>
+<h3 id="获取路径的文件名与目录名称">获取路径的文件名与目录名称</h3>
+<pre><code>- basename 
+- dirname
+</code></pre>
+<h2 id="63文件内容查看">6.3文件内容查看</h2>
+<ul>
+<li>cat由第一行开始显示内容</li>
+<li>tac 从最后一行开始显示，可以看出tac是cat倒着写的</li>
+<li>nl 显示的时候同时输出行号</li>
+<li>more 一页一页的显示文件内容</li>
+<li>less与more类似，但是比more更好的是，他可以往前翻页</li>
+<li>tail 只看后面几行</li>
+<li>od 以二进制的方式读取文件</li>
+</ul>
+<h3 id="创建新文件或修改文件时间-touch">创建新文件或修改文件时间 touch</h3>
+<h2 id="64文件与目录的默认权限与隐藏权限">6.4文件与目录的默认权限与隐藏权限</h2>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2019.04.19</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li><a href="#%E7%9B%AE%E5%BD%95%E4%B8%8E%E8%B7%AF%E5%BE%84">目录与路径</a>
+<ul>
+<li><a href="#%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84">绝对路径与相对路径</a></li>
+<li><a href="#%E7%9B%AE%E5%BD%95%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C">目录的相关操作</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%E7%9A%84%E5%8F%98%E9%87%8F-path">关于执行文件路径的变量 $PATH</a></li>
+<li><a href="#62-%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%9A%84%E7%AE%A1%E7%90%86">6.2 文件与目录的管理</a>
+<ul>
+<li><a href="#%E8%8E%B7%E5%8F%96%E8%B7%AF%E5%BE%84%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D%E4%B8%8E%E7%9B%AE%E5%BD%95%E5%90%8D%E7%A7%B0">获取路径的文件名与目录名称</a></li>
+</ul>
+</li>
+<li><a href="#63%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B">6.3文件内容查看</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E6%96%87%E4%BB%B6%E6%88%96%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4-touch">创建新文件或修改文件时间 touch</a></li>
+</ul>
+</li>
+<li><a href="#64%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%9A%84%E9%BB%98%E8%AE%A4%E6%9D%83%E9%99%90%E4%B8%8E%E9%9A%90%E8%97%8F%E6%9D%83%E9%99%90">6.4文件与目录的默认权限与隐藏权限</a></li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>测试MicroPython（ESP8266）与MQTT服务器的连接 - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="
+开发软件：uPyCraft  V1.1
+暂时用同一网段下的树莓派充当服务器
+手机上的mqtt客户端
+
+本次测试采用刷上MicroPython的ESP8266开发板
+测试思路：远程点亮ESP8266上自带的LED小蓝灯
+首先在开发板上上传s...">
+
+  <meta property="og:title" content="测试MicroPython（ESP8266）与MQTT服务器的连接 - integererer">
+  <meta property="og:description" content="
+开发软件：uPyCraft  V1.1
+暂时用同一网段下的树莓派充当服务器
+手机上的mqtt客户端
+
+本次测试采用刷上MicroPython的ESP8266开发板
+测试思路：远程点亮ESP8266上自带的LED小蓝灯
+首先在开发板上上传s...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/ce-shi-micropythonesp8266yu-mqtt-fu-wu-qi-de-lian-jie/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="测试MicroPython（ESP8266）与MQTT服务器的连接">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/ce-shi-micropythonesp8266yu-mqtt-fu-wu-qi-de-lian-jie">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">测试MicroPython（ESP8266）与MQTT服务器的连接</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2019.12.18</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <ul>
+<li>开发软件：uPyCraft  V1.1</li>
+<li>暂时用同一网段下的树莓派充当服务器</li>
+<li>手机上的mqtt客户端</li>
+</ul>
+<p>本次测试采用刷上MicroPython的ESP8266开发板</p>
+<p>测试思路：远程点亮ESP8266上自带的LED小蓝灯</p>
+<p>首先在开发板上上传simple.py(这是一个用于MicroPython的MQTT客户端)</p>
+<p>然后代码...:</p>
+<pre><code class="language-python">from simple import MQTTClient
+from machine import Pin
+import network
+import time
+ 
+SSID=&quot;LUTCTE_WLAN&quot;            #wifi的ssid
+PASSWORD=&quot;&quot;        #由于学校wifi没有密码 所以为空
+ 
+led=Pin(2, Pin.OUT, value=1)    #经查询 ESP8266的小蓝灯是连接在2口的
+ 
+SERVER = &quot;202.202.21.168&quot;         #mqtt服务器的IP  （树莓派的ip）
+CLIENT_ID = &quot;dengdeng&quot;            #设备ID
+TOPIC = b&quot;led&quot;                    #设备订阅的主题 客户端推送消息的主题
+TOPIC2 =b&quot;ledled&quot;                 #手机客户端订阅的主题  设备推送消息的主题
+username='123123'                 #随便填。。。。
+password='321321'
+state = 0
+c=None
+def sub_cb(topic, msg):
+    global state
+    print((topic, msg))
+    if msg == b&quot;on&quot;:          #当在led主题下输入on的时候灯亮
+            led.value(0)
+            state = 1
+            c.publish(TOPIC2,&quot;on-state&quot;,retain= True)
+    elif msg == b&quot;off&quot;:           #当在led主题下输入off的时候灯灭
+            led.value(1)
+            state = 0
+            c.publish(TOPIC2,&quot;off-state&quot;,retain= True)
+def connectWifi(ssid,passwd):
+  global wlan
+  wlan=network.WLAN(network.STA_IF)
+  wlan.active(True)
+  wlan.disconnect()
+  wlan.connect(ssid,passwd)
+  while(wlan.ifconfig()[0]=='0.0.0.0'):
+    time.sleep(1)
+try:
+  connectWifi(SSID,PASSWORD)
+  server=SERVER
+  c = MQTTClient(CLIENT_ID, server,0,username,password)
+  c.set_callback(sub_cb)
+  c.connect()
+  c.subscribe(TOPIC)
+  c.publish(TOPIC2,&quot;shebeishangxian&quot;,retain= True)
+  print(&quot;Connected to %s, subscribed to %s topic&quot; % (server, TOPIC))
+ 
+  while True:
+    c.wait_msg()
+finally:
+  if(c is not None):
+    c.disconnect()
+  wlan.disconnect()
+  wlan.active(False)
+</code></pre>
+<p>将此代码存储到boot.py中，因为MicroPython在上电时会先执行boot.py里的内容</p>
+<p>然后打开手机上任一mqtt的客户端  将其连接到树莓派上的mqtt客户端</p>
+<p><img src="https://s2.ax1x.com/2019/12/22/QzZfUI.png" alt="然后打开手机上任一mqtt的客户端  将其连接到树莓派上的mqtt客户端" loading="lazy"></p>
+<p>然后向esp8266发送消息：on</p>
+<p><img src="https://s2.ax1x.com/2019/12/22/QzZ5PP.png" alt="然后向esp8266发送消息" loading="lazy"></p>
+<p>然后亮灯！！</p>
+<p><img src="https://s2.ax1x.com/2019/12/22/QzmiSf.md.jpg" alt="亮灯" loading="lazy"></p>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2019.12.18</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

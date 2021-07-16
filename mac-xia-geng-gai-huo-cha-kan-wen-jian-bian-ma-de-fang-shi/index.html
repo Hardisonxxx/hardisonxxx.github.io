@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>mac 下更改或查看文件编码的方式 - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="使用vim
+在vim中查看编码文件
+:set fileencoding
+
+
+使用Vim修改：
+:set fileencoding=utf-8
+
+使用enca
+ence是在unix下的一款文件编码管理软件
+enca安装：
+Linux（deba...">
+
+  <meta property="og:title" content="mac 下更改或查看文件编码的方式 - integererer">
+  <meta property="og:description" content="使用vim
+在vim中查看编码文件
+:set fileencoding
+
+
+使用Vim修改：
+:set fileencoding=utf-8
+
+使用enca
+ence是在unix下的一款文件编码管理软件
+enca安装：
+Linux（deba...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/mac-xia-geng-gai-huo-cha-kan-wen-jian-bian-ma-de-fang-shi/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="mac 下更改或查看文件编码的方式">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/mac-xia-geng-gai-huo-cha-kan-wen-jian-bian-ma-de-fang-shi">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">mac 下更改或查看文件编码的方式</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2020.03.06</div>
+          <div class="flex justify-center mt-4">
+            
+              <a href="https://denglinzhe.com/tags/vim" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>vim
+              </a>
+            
+              <a href="https://denglinzhe.com/tags/mac" class="inline-flex items-center mr-4 text-sm text-gray-600">
+                <span class="mr-1">#</span>mac
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <h2 id="使用vim">使用vim</h2>
+<h3 id="在vim中查看编码文件">在vim中查看编码文件</h3>
+<pre><code class="language-vim">:set fileencoding
+</code></pre>
+<p><img src="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2020-02-0512.43.15.png" alt="https://blog-denglinzhe-com.oss-cn-chengdu.aliyuncs.com/img/截屏2020-02-0512.43.15.png" loading="lazy"></p>
+<h3 id="使用vim修改">使用Vim修改：</h3>
+<pre><code class="language-vim">:set fileencoding=utf-8
+</code></pre>
+<h2 id="使用enca">使用enca</h2>
+<p>ence是在unix下的一款文件编码管理软件</p>
+<h3 id="enca安装">enca安装：</h3>
+<p>Linux（debain系）：</p>
+<pre><code class="language-bash">sudo apt-get install enca
+</code></pre>
+<p>mac:(需要安装brew)</p>
+<pre><code class="language-bash">brew install enca
+</code></pre>
+<h3 id="enca使用">enca使用</h3>
+<h4 id="检查文件编码">检查文件编码</h4>
+<pre><code class="language-bash">enca -L zh_CN xxx.txt  #检查文件名为xxx.txt中 中文的编码方式
+</code></pre>
+<h4 id="转换文件编码">转换文件编码</h4>
+<pre><code class="language-bash">enca -L 当前语言 -x 目标编码 文件名
+</code></pre>
+<p>-L zh_CN 一般也可以不用指定</p>
+<h4 id="批量转换">批量转换</h4>
+<pre><code class="language-bash">enca -x 目标编码 *
+</code></pre>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2021.04.09</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8vim">使用vim</a>
+<ul>
+<li><a href="#%E5%9C%A8vim%E4%B8%AD%E6%9F%A5%E7%9C%8B%E7%BC%96%E7%A0%81%E6%96%87%E4%BB%B6">在vim中查看编码文件</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8vim%E4%BF%AE%E6%94%B9">使用Vim修改：</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8enca">使用enca</a>
+<ul>
+<li><a href="#enca%E5%AE%89%E8%A3%85">enca安装：</a></li>
+<li><a href="#enca%E4%BD%BF%E7%94%A8">enca使用</a>
+<ul>
+<li><a href="#%E6%A3%80%E6%9F%A5%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81">检查文件编码</a></li>
+<li><a href="#%E8%BD%AC%E6%8D%A2%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81">转换文件编码</a></li>
+<li><a href="#%E6%89%B9%E9%87%8F%E8%BD%AC%E6%8D%A2">批量转换</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

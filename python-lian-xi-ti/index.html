@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>Python练习题 - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="习题2
+#获得用户输入的一个整数N，计算并输出N的32次方
+a=eval(input(&amp;quot;请输入一个整数：&amp;quot;))
+v = a**3
+print(&amp;quot;N的32次方为{}&amp;quot;.format(v))  
+
+#获得...">
+
+  <meta property="og:title" content="Python练习题 - integererer">
+  <meta property="og:description" content="习题2
+#获得用户输入的一个整数N，计算并输出N的32次方
+a=eval(input(&amp;quot;请输入一个整数：&amp;quot;))
+v = a**3
+print(&amp;quot;N的32次方为{}&amp;quot;.format(v))  
+
+#获得...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/python-lian-xi-ti/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="Python练习题">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/python-lian-xi-ti">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">Python练习题</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2019.06.17</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <h1 id="习题2">习题2</h1>
+<pre><code class="language-python">#获得用户输入的一个整数N，计算并输出N的32次方
+a=eval(input(&quot;请输入一个整数：&quot;))
+v = a**3
+print(&quot;N的32次方为{}&quot;.format(v))  
+</code></pre>
+<pre><code class="language-python">#获得用户输入的一段文字，将这段文字进行垂直输出
+a = input(&quot;请输入一段文字：&quot;)
+i = 0
+for i in range(len(a)):
+    print(a[i])
+    i += 1
+</code></pre>
+<pre><code class="language-python">#获得用户输入的一个合法算式，例如：1.2+3.4，输出运算结果
+a = eval(input(&quot;请输入一个算式:&quot;))
+print(&quot;算式的值为{}&quot;.format(a))
+
+</code></pre>
+<pre><code class="language-python">#获得用户输入的一个小数，提取并输出其整数部分
+a = eval(input(&quot;请输入一个小数:&quot;))
+b = int(a)
+print(&quot;小数的整数部分为{}&quot;.format(b))
+</code></pre>
+<h2 id="习题三">习题三</h2>
+<pre><code class="language-python">#获得用户输入的一个整数，输出该整数百位及以上的数字
+
+a = str(input(&quot;请输入一个整数&quot;))
+
+print(a[:-2])
+
+
+</code></pre>
+<pre><code class="language-python">#获得用户输入的一个字符串，将该字符串按照空格分割，然后逐行打印出来
+
+a = str(input(&quot;请输入一串字符串&quot;))
+s = a.split()
+for i in range(len(s)):
+    print(s[i])
+
+</code></pre>
+<pre><code class="language-python">#程序读入一个表示星期几的数字（1-7），输出对应的星期字符串名称。例如：输入3，返回“星期三”
+a = int(input(&quot;请输入数字（如：3）&quot;))
+if a == 1:
+    s='一'
+elif a == 2:
+    s='二'
+elif a == 3:
+    s='三'
+elif a == 4:
+    s='四'
+elif a == 5:
+    s='五'
+elif a == 6:
+    s='六'
+elif a == 7:
+    s='七'
+else:
+    s='?????,没有哒'
+
+print(&quot;星期&quot;+s)
+
+</code></pre>
+<pre><code class="language-python">#设n是一任意自然数，如果n的各位数字反向排列所得自然数与n相等，则n被称为回文数。从键盘输入一个5位数字，请编写程序判断这个数字是不是回文数。
+a = str(input(&quot;请输入一个5位数字，让我康康是不是回文数&quot;))
+if a == a[::-1]:
+    print(&quot;是&quot;)
+else:
+    print(&quot;不是&quot;)
+</code></pre>
+<pre><code class="language-python">#输入一个十进制数，分别输出其二进制、八进制、十六进制字符串
+a = int(input(&quot;请输入一个十进制数，让我来把它变成其它进制的数！！&quot;))
+print(&quot;十进制：{0:d}\n二进制：{0:b}\n八进制：{0:o}\n十六进制：{0:x}&quot;.format(a))
+</code></pre>
+<pre><code class="language-python">#输入一个年份，看输出是否是闰年。（闰年条件：能被4整除但是不能被100整除，或者能被400整除的年份都是闰年）
+a = eval(input(&quot;请输出年份，让我来康康是不是闰年！！！&quot;))
+
+if (a%4 == 0 and a%100 != 0):
+    print(&quot;{}是闰年&quot;.format(a))
+elif a%400 == 0:
+    print(&quot;{}是闰年&quot;.format(a))
+else:
+    print(&quot;{}不是闰年耶&quot;.format(a))
+</code></pre>
+<pre><code class="language-python">#最大公约数计算。获得两个整数，求出这两个整数的最大公约数和最小公倍数。最大公约数的计算一般使用辗转相除法,最小公倍数则使用两个数的乘积除以最大公约数。
+a = eval(input(&quot;请输入第一个整数&quot;))
+b = eval(input(&quot;请输入第二个整数&quot;))
+def ZDGYS(a,b):
+    a,b = (a,b) if a &lt; b else (b,a)
+    while b:
+        a,b = b,a%b
+    return a
+
+print(&quot;这两个数的最大公约数为{}\n最小公倍数为{}&quot;.format(ZDGYS(a,b),a*b//ZDGYS(a,b)))
+
+</code></pre>
+<pre><code class="language-python">#统计不同字符个数，用户从键盘输入一行字符，编写一个程序，统计并输出其中英文字符、数字、空格和其他字符的个数
+a = str(input(&quot;请输入一行字符，让我来统计统计字符个数！！！&quot;))
+zifu = 0
+shuzi =0
+kongge = 0
+qitazifu = 0
+for i in a:
+    if i.isalpha():
+        zifu += 1
+    if i.isnumeric():
+        shuzi += 1
+    if i.isspace():
+        kongge += 1
+    else:
+        qitazifu += 1
+print(&quot;中英文字符的个数为:{0}\n数字的个数为:{1}\n空格的个数为:{2}\n其他字符的个数为:{3}&quot;.format(zifu,shuzi,kongge,qitazifu))
+</code></pre>
+<pre><code class="language-python">#羊车门问题。有三扇关闭的门，一扇门后面停着汽车，其余门后是山羊，只有主持人知道每扇门后面是什么。参赛者可以选择一扇门，在开启它之前，主持人会开启另外一扇门，露出门后面的山羊，然后允许参赛者更换自己的选择。请问，参赛者更换后能否增加猜中汽车的机会？——这是一个经典问题。请使用random库对这个随机事件进行预测，分别输出参赛者改变选择和坚持选择获胜的概率。
+
+import random
+s = random.randint(5000,10000)
+Change = 0
+NotChange = 0
+for i in range(1,s+1):
+    a = random.randrange(1,4)
+    b = random.randrange(1,4)
+    if a == b:
+        NotChange += 1
+    else:
+        Change += 1
+print(&quot;如果不换门的话，门后面有车的概率为{0}\n如果换门的话，门后面有车的概率为{1}\n&quot;.format(NotChange/s,Change/s))
+
+
+</code></pre>
+<h1 id="第五章">第五章</h1>
+<pre><code class="language-python">#编写一个函数，打印200以内的所有素数，以空格分隔
+
+def DaYinSuShu():
+    for i in range(2,200):
+        for j in range(2,i):
+            if i%j == 0:
+                break
+        else:
+            print(i,end=',')
+DaYinSuShu()
+
+</code></pre>
+<pre><code class="language-python"># 编写一个函数计算传入字符串中数字、字母、空格以及其他字符的个数
+
+def charNum(s):
+    numNumber = 0
+    letterNumber = 0
+    spaceNumber = 0
+    otherNumber = 0
+    for i in s:
+        if i.isnumeric():
+            numNumber += 1
+        elif i.isspace():
+            spaceNumber += 1
+        elif i.isalpha():
+            letterNumber += 1
+        else:
+            otherNumber += 1
+    print('The number of Number is:',numNumber)
+    print('The number of Char is:',letterNumber)
+    print('The number of Space is:',spaceNumber)
+    print('The number of Other is:',otherNumber)
+
+
+a = str(input('please input a string'))
+charNum(a)
+</code></pre>
+<p><img src="https://storage.denglinzhe.com/timg.jpeg" alt="" loading="lazy"></p>
+<pre><code class="language-python"># 实现 isPrime() 函数，参数为整数，要有异常处理。如果整数是质数，返回 True，否则返回 False
+def isPrime(s):
+    while  True:
+        try:
+            if type(eval(s)) != type(1):
+                print('InputError,please input a int')
+            else:
+                break
+        except:
+            s = input('InputError,please input a int')
+    
+    s = eval(s)
+
+    for i in range(2,s):
+        if s % i != 0:
+            return True
+        else:
+            return False
+
+a = input(&quot;请输入一个数，让我看来康康是不是质数&quot;)
+print(isPrime(a))
+
+
+</code></pre>
+<pre><code class="language-python">
+# 实现 isNum() 函数，参数为一个字符串。如果这个字符串属于整数、浮点数或者复数的表示，则返回 True，否则返回 False。
+
+#方法一
+def isNum(s):
+    try:
+        s = type(eval(s))
+        if s == int or s == float or s == complex:
+            return True
+        else:
+            return False
+    except:
+        return False   
+    
+a = input(&quot;请输入一个字符串，让我来康康&quot;)
+print(isNum(a))
+
+
+
+# 方法二
+
+def isNum(s):
+    try:
+        a = type(eval(s))
+        if a == type(1):
+            return True
+        elif a == type(1.1):
+            return True
+        elif a == type(1+1j):
+            return True
+    except:
+        return False
+    
+a = input(&quot;请输入一个字符串，让我来康康&quot;)
+print(isNum(a))
+
+</code></pre>
+<pre><code class="language-python"># 编写一个函数，参数为一个整数 n。利用递归获取斐波那契数列中的第 n 个数并返回。
+# 斐波那契数列 ：这个数列从第3项开始，每一项都等于前两项之和。 
+
+def Fibonacci(s):
+    if s == 1:
+        return 1
+    elif s == 2:
+        return 1
+    else:
+        return Fibonacci(s-1)+Fibonacci(s-2)
+    
+a = eval(input('请输入一个数，我们会返回他之前的斐波那契数列..'))
+print('斐波那契数列中第{0}个数为{1}'.format(a,Fibonacci(a))) 
+</code></pre>
+<pre><code class="language-python">#英文字符频率统计。编写一个程序，对给定字符串中出现的 a~z 字母频率进行分析，忽略大小写，采用降序方式输出。
+
+s = str(input('please input some string'))
+s = s.lower()
+s = s.replace(' ','')
+counts = {}
+for i in s:
+    counts[i] = counts.get(i,0)+1
+ls = list(counts.items())
+ls.sort(key = lambda x:x[1],reverse = True)
+for i in range(len(counts)):
+    word,count = ls[i]
+    print('{:&lt;5}{:&gt;10}'.format(word,count))
+</code></pre>
+<pre><code class="language-python">#中文字符频率统计。编写一个程序，对给定字符串中出现的全部字符（含中文字符）频率进行分析，采用降序方式输出。
+
+a = str(input(&quot;please inpur some Chineses&quot;))
+a = a.replace(' ','')
+counts = {}
+for i in a:
+    counts[i] = counts.get(i,0) + 1
+ls = list(counts.items())
+ls.sort(key=lambda x: x[1],reverse = True)
+for i in range(len(counts)):
+    word,count = ls[i]
+    print('{:&lt;10}{:&gt;5}'.format(word,count))
+</code></pre>
+<pre><code class="language-python">#随机密码生成。编写程序在26个字母大小写和9个数字组成的列表中随机生成10个8位数密码。
+import random
+txt = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+ls = list(txt)
+for i in range(10):
+    a = ''
+    print('密码{}:'.format(i+1))
+    for i in range(8):
+        a += ls[random.randrange(len(ls))]
+    print(a)
+
+#方法二：
+
+import random
+txt = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+ls = list(txt)
+for i in range(10):
+    a = &quot;&quot;
+    for i in range(8):
+        a = random.choice(ls) + a
+    print(a)
+
+</code></pre>
+<pre><code class="language-python">#重复元素判断。编写一个函数，接收列表作为参数，如果一个元素在列表中出现了不止一次，则返回True，但不改变原来列表的值。同时编写调用这个函数和输出测试结果的程序。
+def ChongFuPanDuan(txt):
+    txt = txt.replace(' ','')
+    counts = {}
+    for i in txt:
+        counts[i] = counts.get(i,0) + 1
+    
+    num = list(counts.values())
+    for i in range(len(num)):
+        if num[i] &gt; 1:
+            return True
+
+
+
+
+txt = input('请输入字符，让我康康有没有重复的:')
+print(ChongFuPanDuan(txt))
+</code></pre>
+<pre><code class="language-python">#重复元素判定续。利用集合的无重复性改编上一个程序，获得一个更快更简洁的版本。
+def ChongFuPanDuan(txt):
+    txt = txt.replace(' ','')
+    st = set(txt)
+    if len(st) != len(txt):
+        return True
+
+    #counts = {}
+    #for i in txt:
+    #    counts[i] = counts.get(i,0) + 1
+    
+    #num = list(counts.values())
+    #for i in range(len(num)):
+    #    if num[i] &gt; 1:
+    #        return True
+
+txt = input('请输入字符，让我康康有没有重复的:')
+print(ChongFuPanDuan(txt))
+
+</code></pre>
+<h2 id="第七章">第七章</h2>
+<pre><code class="language-python">#输入一个文件和一个字符，统计该字符在文件中出现的次数
+f = open('/Users/denglinzhe/Documents/hamlet.txt','r+')
+fo = f.read()
+print(fo)
+s = input('please input a ch')
+a = 0
+for i in range(len(fo)):
+    if s == fo[i]:
+        a += 1
+print('{}在该文本中出现了{}次'.format(s,a))
+
+</code></pre>
+<pre><code class="language-python">#假设有一个英文文本文件，编写一个程序读取其内容，并将里面的大写字母变成小写字母，小写字母变成大写字母。
+
+#s = 'asdffASDFG'
+f = open('/Users/denglinzhe/Documents/hamlet.txt','r',encoding ='utf-8')
+fo = f.read()
+c = ''
+for i in fo:
+    if i in 'qwertyuiopasdfghjklzxcvbnm':
+        a = i.upper()
+    elif i in 'QWERTYUIOPASDFGHJKLZXCVBNM':
+        a = i.lower()
+    else:
+        a = i
+    c += a
+print(c)
+        
+</code></pre>
+<pre><code class="language-python"># 编写一个程序，生成一个10x10的随机矩阵并保存文件（空格分隔行向量，换行分隔列向量），在写程序将刚才保存的文件另存为CSV格式，用Excle或文本编辑器打开康康结果对不对。
+
+import random
+f = open('/Users/denglinzhe/Documents/123.txt','w',encoding='utf-8')
+s = []
+for i in range(10):
+    a = []
+    for j in range(10):
+        a.append(str(random.randint(1,9)))
+    s.append(a)
+for row in s:
+    f.write('  '.join(row)+'\n')
+f.close()
+</code></pre>
+<pre><code class="language-python"># 编写一个程序，读取一个Python源代码文件，将文件中所有除保留字外的小写字母替换成大写字母，生成后的文件要能够被Python解释器正确执行。
+
+BaoLiuZi = ['and', 'as', 'assert', 'break', 'class', 'continue',
+            'def', 'del', 'elif', 'else', 'except', 'finally',
+            'for', 'from', 'global', 'if', 'import', 'in', 'is',
+            'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise',
+            'return', 'try', 'while', 'time', 'with', 'yield', 'True',
+            'False', 'None']
+
+f1 = open('/Users/denglinzhe/Documents/Untitled-1.py','r',encoding = 'utf-8')
+f2 = open('/Users/denglinzhe/Documents/Untitled-5.py','w',encoding = 'utf-8')
+fo1 = f1.readlines()
+dic = {}
+num = 0
+for line in fo1:
+    for word in BaoLiuZi:
+        if word in line:
+            num += 1
+            dic['编号{}'.format(str(num))] = word
+            line = line.replace(word,'编号{}'.format(str(num)))
+        else:
+            continue
+
+
+    
+    line = line.upper()
+    for key in dic.keys():
+        if key in line:
+            line = line.replace(key,dic[key])    
+    
+    fo2 = f2.write(line)
+
+</code></pre>
+<pre><code class="language-python">#编写一个程序，要求能够将元素为任意Python支持的类型（包括含有半角逗号的字符串）的列表转储为CSV格式文件，并能够重新正确解析为列表。
+
+def InputAndSave_csv(ls,Name):
+    value = input('请向列表添加第1个元素')
+    ls.append(value)
+    num = 1
+    while value != '':
+        num += 1
+        value = input('请向列表添加第{}个元素（如需结束输入，请输入空格）'.format(num))
+        ls.append(value)
+    print('列表已输入完毕，您输入的列表为:\n{}'.format(ls))
+    
+    #将逗号的点换为点
+    for i in range(len(ls)):
+        if ',' in ls[i]:
+            ls[i] = ls[i].replace(',','.')
+
+    f = open('/Users/denglinzhe/Documents/{}.csv'.format(Name),'w',encoding = 'utf-8')
+    f.write(','.join(ls)+'\n')
+    f.close()
+    print('\n恭喜你~，已成功保存为{}.csv文件'.format(Name))
+
+def Read_csv(Name):
+    f = open('/Users/denglinzhe/Documents/{}.csv'.format(Name),'r',encoding = 'utf-8')
+    fo = f.read().strip('\n').split(',')
+    #将替换的点换为逗号
+    for i in range(len(fo)):
+        if '.' in fo[i]:
+            fo[i] = fo[i].replace('.',',')
+    print('\n文件{}.csv读取中....请稍后\n'.format(Name))
+    print(fo)
+    f.close()
+
+def main():
+    ls = []
+    Name = input('请输入您将要保存的csv文件名称:')
+    InputAndSave_csv(ls,Name)
+    Read_csv(Name)
+
+main()
+
+
+</code></pre>
+<h2 id="第八章">第八章</h2>
+<pre><code class="language-python">#1.读取保存在本地的html文件
+#2.提取页面中的链接文件
+#3.在屏幕上显示提取到的链接文件
+#4.将提取到的链接保存到文件
+
+
+def DuQuWenJian(inputfile):
+    f = open(inputfile,'r',encoding='utf-8')
+    fo = f.readlines()
+    f.close()
+    return fo
+
+def TiQuImgLianJei(filetxt):
+    urls = []
+    for line in filetxt:
+        if 'img' in line:
+            url = line.split('src=')[-1].split('&quot;')[1]
+            if 'http' in url:
+                urls.append(url)
+    return urls
+
+def XianShiLianJei(TiQuDaoDeLianJei):
+    count = 0
+    for url in TiQuDaoDeLianJei:
+        count += 1
+        print('第{}张图片URL:{}'.format(count,url))
+
+def ShuChuDaoWenJian(outputfile,TiQuDaoDeLianJei):
+    f = open(outputfile,'w',encoding = 'utf-8')
+    for line in TiQuDaoDeLianJei:
+        f.write(line + '\n')
+    f.close()
+    print('\n-------------------------------------------')
+    print(&quot;\n链接已保存至{}&quot;.format(outputfile))
+
+
+
+
+
+def main():
+
+    inputfile = '/Users/denglinzhe/Documents/Untitled-1.txt'
+    outputfile = '/Users/denglinzhe/Documents/pic.txt'
+    filetxt = DuQuWenJian(inputfile)
+    TiQuDaoDeLianJei = TiQuImgLianJei(filetxt)
+    XianShiLianJei(TiQuDaoDeLianJei)
+    ShuChuDaoWenJian(outputfile,TiQuDaoDeLianJei)
+
+
+main()
+
+</code></pre>
+<pre><code class="language-python">#用户编写一个年份，编写程序判断是不是闰年，如果年份能够被400整除，则是闰年；如果年份能被4整除但是不能被100整除也为闰年
+while 1:
+    s = eval(input(&quot;请输入年份&quot;))
+    if (s % 400 == 0) or (s % 4 == 0 and s % 100 != 0):
+        print('{}是闰年'.format(s))
+    else:
+        print(&quot;{}不是闰年&quot;.format(s))
+
+
+</code></pre>
+
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2019.06.17</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li><a href="#%E4%B9%A0%E9%A2%982">习题2</a>
+<ul>
+<li><a href="#%E4%B9%A0%E9%A2%98%E4%B8%89">习题三</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0">第五章</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%83%E7%AB%A0">第七章</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0">第八章</a></li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>

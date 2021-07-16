@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" style="--theme-color: #1C1C1C; --link-color: #1C1C1C;">
+<head>
+  <meta charset="UTF-8">
+  <title>Python 试题总结 - integererer</title>
+
+  <link rel="icon" href="https://static.gridea.dev/280798712379212296/Bf_v4EueE.ico">
+<!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+<link rel="alternate" type="application/atom+xml" title="integererer - Atom Feed" href="https://denglinzhe.com/atom.xml">
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?782a1493da4d827b066210d0d04e4cad";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFCRR8Q57W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script> -->
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-182385326-1');
+    ga('set', 'dimension1', 'site/Z9MJatpxx');
+    ga('set', 'dimension2', 'post/');
+    ga('send', 'pageview');
+    // gtag('set', {
+    //   'custom_map': {
+    //     'dimension1': 'siteId',
+    //     'dimension2': 'postId',
+    //   }
+    // })
+
+    // gtag('config', 'G-NFCRR8Q57W', {
+    //   'siteId': 'site/Z9MJatpxx',
+    //   'postId': 'post/',
+    // });
+  </script>
+
+
+
+  <script>
+    ga('create', 'UA-163600788-1', {name: 'user'});
+    ga('user.send', 'pageview');
+    // gtag('config', 'UA-163600788-1');
+  </script>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="
+二级Python
+第一套题
+
+命名规则：字母数字下划线
+Python中 \0 不代表字符串结尾 只是个简单的转义字符
+Python是一种解释性高级通用脚本语言，可以用于几乎任何与程序设计相关应用的开发
+在Python中算数运算符&amp;quot...">
+
+  <meta property="og:title" content="Python 试题总结 - integererer">
+  <meta property="og:description" content="
+二级Python
+第一套题
+
+命名规则：字母数字下划线
+Python中 \0 不代表字符串结尾 只是个简单的转义字符
+Python是一种解释性高级通用脚本语言，可以用于几乎任何与程序设计相关应用的开发
+在Python中算数运算符&amp;quot...">
+  
+  <meta property="og:url" content="https://denglinzhe.com/python-shi-ti-zong-jie/">
+  <meta property="og:site_name" content="integererer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="Python 试题总结">
+
+  <meta name="gridea:post_id" content="">
+
+  <link rel="canonical" href="https://denglinzhe.com/python-shi-ti-zong-jie">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.0.3/styles/a11y-light.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/css/main.css">
+
+</head>
+<body>
+  
+    
+  
+  <div id="page">
+    <div class="mb-16 sticky top-0 z-20 bg-white">
+  <header class="py-4 flex items-baseline justify-between max-w-2xl mx-auto px-2">
+    <h1 class="text-lg text-center font-medium px-4 md:px-0 flex items-center">
+      <div class="site-logo-text font-normal">i</div>
+      <a href="/">integererer</a>
+    </h1>
+    <div class="hidden sm:flex justify-center">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >首页</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 text-base border-b border-transparent"
+          
+        >关于我</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+        
+          <span class="text-gray-200">/</span>
+        
+      
+        
+        <a
+          href=""
+          class="mx-2 text-base border-b border-transparent"
+          
+        ></a>
+        
+      
+    </div>
+    <div class="flex sm:hidden py-2 px-4 text-center cursor-pointer" @click="openMenu = true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+    </div>
+  </header>
+
+  <div class="fixed top-0 right-0 bottom-0 left-0 bg-white hidden" :style="{
+    display: openMenu ? 'block !important' : 'none',
+  }" v-if="openMenu">
+    <div class="py-4 px-2 flex justify-end" @click="openMenu = false">
+      <div class="flex py-2 px-4 text-center cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
+      </div>
+    </div>
+    <div class="flex flex-col p-4">
+      
+        
+        <a
+          href="https://denglinzhe.com"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >首页</a>
+      
+        
+        <a
+          href="https://denglinzhe.com/aboutme"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        >关于我</a>
+      
+        
+        <a
+          href="https://www.instagram.com/integererer/"
+          class="mx-2 my-4 text-base border-b border-transparent"
+          target="_blank"
+        >instagram</a>
+      
+        
+        <a
+          href=""
+          class="mx-2 my-4 text-base border-b border-transparent"
+          
+        ></a>
+      
+    </div>
+  </div>
+</div>
+    <div class="border-b border-gray-200">
+      <div class="max-w-2xl mx-auto px-6 md:px-2">
+        <div class="my-24 text-center">
+          <h1 class="text-2xl font-bold">Python 试题总结</h1>
+          <div class="post-title-bar mx-auto rounded mt-4"></div>
+          <div class="text-gray-400 mt-4">2019.10.16</div>
+          <div class="flex justify-center mt-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-bar" class="w-full sticky top-0 z-10 bg-white" style="height: 64px;"></div>
+    <div class="p-4 md:p-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 flex relative">
+        <section class="post-content flex-1 default-post-content max-w-2xl">
+          <div v-pre>
+            <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<h1 id="二级python">二级Python</h1>
+<h2 id="第一套题">第一套题</h2>
+<ul>
+<li>命名规则：字母数字下划线</li>
+<li>Python中 \0 不代表字符串结尾 只是个简单的转义字符</li>
+<li>Python是一种解释性高级通用脚本语言，可以用于几乎任何与程序设计相关应用的开发</li>
+<li>在Python中算数运算符&quot;//&quot;表示整数除法,返回一个整数     而&quot;/&quot;则单纯的表示浮点数除法,返回浮点结果</li>
+<li>python中<strong>break</strong>意为结束循环,<strong>continue</strong>是结束当前循环进入下一个循环</li>
+<li>python中的循环结构有for语句和while语句两种</li>
+<li>range() 函数返回的是一个可迭代对象  eg:<code>range(1,6)</code>返回1,2,3,4,5 ; <code>range(5)等价于range(0,5)</code></li>
+<li>return语句用来结束函数并将程序返回到函数被调用的位置继续执行,return语句可以出现在函数中的任何部分,可以同时将多个运算结果返回给函数被调用处的变量</li>
+<li>python语言通过保留字def定义函数</li>
+<li>ls[2][1]指的是列表中序号为2的元素中序号为1的元素</li>
+<li>d.get(key,default) 方法是用来返回key对应的值,如果字典中不存在该键,则返回default</li>
+<li>序列类型(元素之间存在先后关系,通过序号访问):字符串类型,列表类型,元组类型</li>
+<li>映射类型(字典是可变数量键值对的数据结构,通过字典类型实现映射):字典类型</li>
+<li>ord()函数是把字符串转换成对应的Unicode码</li>
+<li>chr()函数是ord()函数的逆运算,把Unicode码转换成对应的字符输出</li>
+<li>writelines()方法是将一个元素为字符串的列表整体写入文件</li>
+<li>write()方法是向文件写入一个字符串或字节流,每次写入后,将会记录一个写入指针</li>
+<li>二维列表对象输出为CSV格式文件,采用遍历循环和字符串的join()方法相结合</li>
+<li>csv文件的每一行是一组数据,可以用列表,元组来表示</li>
+<li>从csv文件获得数据内容后,可以用replace()来去掉每行最后的换行符</li>
+<li>若一个列表变量里的元素都是字符串类型,则可以用join()合成字符串</li>
+<li>Python文件读取方法:
+<ul>
+<li>f.read()从文件中读入整个文件的内容</li>
+<li>f.readline()从文件中读入一行内容</li>
+<li>f.readlines()从文件中读入所有行,以每行为元素形成一个列表</li>
+<li>f.seek()改变当前文件操作指针的位置</li>
+</ul>
+</li>
+<li>Python文件写入方法:
+<ul>
+<li>f.write()</li>
+<li>f.writelines()</li>
+</ul>
+</li>
+<li>一维数据采用线性方式组织,在Python中主要采用列表形式表示</li>
+<li>集合不属于线性结构</li>
+<li>二维数据采用二维表格方式组织,在Python中可以采用二位列表形式表示</li>
+<li>高维数据由键值对类型的数据构成,采用对象方式组织,在Python中可以采用字典类型表示</li>
+<li>属于Python数据分析及可视化的第三方数据库有:numpy,scipy,pandas,matplotlib,TVTK,mayavi等等</li>
+<li>属于Python Web开发方向的Python第三方生态库有:Django,Pyramid,Flask等等</li>
+<li></li>
+</ul>
+<h2 id="第二套题">第二套题</h2>
+<ul>
+<li>python三种基本数字类型:整数类型,浮点数类型,复数类型</li>
+<li>静态语言采用编译方式执行,脚本语言采用解释方式执行</li>
+<li>python基本控制逻辑:顺序结构,选择结构(分支结构),循环结构,异常处理</li>
+<li>eval()函数是把字符串转换成Python可用的语言</li>
+<li>python中定义类的关键词是  class</li>
+<li>ls.remove(x)  是删除列表ls中出现的第一个元素x</li>
+<li>append():  连接字符串</li>
+<li>split()方法通过指定分隔符对字符串进行切片,返回分割后的字符串列表</li>
+<li>numpy是python的一种开源数值计算扩展的第三方库,用于处理数据类型相同的多维数组</li>
+<li>PIL是python语言在图像处理方面的重要第三方库</li>
+<li></li>
+</ul>
+<h2 id="第三套题">第三套题</h2>
+<ul>
+<li>在python中  0.1+0.2 = 0.30000000000000004</li>
+<li>在python中 字符编码以Unicode形式存储</li>
+<li>complex() 方法返回复数  complex(10.99) 返回 (10.99+0j)</li>
+<li>在python语言中 使用for..in..方式循环不能遍历的类型是 : 复数</li>
+<li>python中全局变量和局部变量的命名可以相同</li>
+<li>函数定义时 可选参数一般放置在非可选参数的后面</li>
+<li>列表可以使用比较操作符对列表进行比较</li>
+<li></li>
+<li></li>
+</ul>
+<h2 id="第四套题">第四套题</h2>
+<ul>
+<li>在Python语言中 IPO == Input Process Output</li>
+<li>复数实部可以为0</li>
+<li>insert()方法是 在列表的任意位置插入元素</li>
+<li>二位数据也称表格数据 , 由关联关系数据构成</li>
+</ul>
+<h2 id="第五套题">第五套题</h2>
+<ul>
+<li>文本文件和二进制文件的存储方式不同,所以文本文件不可以用二进制文件方式读入</li>
+<li>浮点数3.0和整数3具有相同的值,     其硬件执行单元,计算机指令处理方法和数据类型均不相同</li>
+<li>random.uniform(a,b):生成一个[a,b]之间的随机小数</li>
+<li>reverse()方法的作用是将整个列表中的元素反转</li>
+</ul>
+<h2 id="第六套题">第六套题</h2>
+<ul>
+<li>文件的seek()方法用来定位文件的读/写位置,  tell()方法用来返回文件指针的当前位置</li>
+<li>在python类的定义中,以一个下划线开头的成员是<em><strong>保护成员</strong></em>,以两个下划线开头和结束的成员是系统定义的<em><strong>特殊成员</strong></em>,以两个或多个下划线开头但不以两个或多个下划线结束的成员是<em><strong>私有成员</strong></em></li>
+<li>all(x)函数是当组合类型变量x中所有元素为真是返回True</li>
+<li>spilt() 是字符串分隔函数</li>
+<li>ascii()返回括号内的参数字符串</li>
+<li>类是一种抽象事物的分类 , 对象才是一种实例</li>
+<li>lambda关键字是用来定义匿名函数的  格式为 <code>&lt;函数名&gt; = lambda &lt;参数列表&gt;:&lt;表达式&gt;</code></li>
+<li></li>
+</ul>
+<h2 id="第七套题">第七套题</h2>
+<ul>
+<li>元组与列表类似,可存储不同类型的数据.元组是不可改变的,创建后不能再做任何操作</li>
+<li>一个类继承另一个类,那么被继承的这个类称为超类或者父类</li>
+<li>如果调用的是继承父类的公有方法,可以在公有方法中访问父类的私有属性和私有方法</li>
+<li>id() 是Python中的内置函数,用来查看变量在内存中的地址</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+        window.location.href="http://www.cnblogs.com/denglinzhe";　 
+    </script>
+</html>
+          </div>
+          <div class="py-4 text-gray-600 flex items-center justify-between">
+            <div class="">
+              <div class="text-sm text-gray-300">最后更新于: </div>
+              <div class="text-base font-medium">2019.10.16</div>
+            </div>
+            <!-- <div class="flex items-center text-sm text-gray-600">
+              <i class="ri-eye-line"></i> <span class="ml-2">{{ views }}</span>
+            </div> -->
+          </div>
+          <div>
+            <div id="disqus_thread"></div>
+          </div>
+        </section>
+        
+          <!-- <aside class="sticky toc-container flex-shrink-0 hidden md:block">
+            <div class="text-gray-600 mb-4">目 录</div>
+            <ul class="markdownIt-TOC">
+<li><a href="#%E4%BA%8C%E7%BA%A7python">二级Python</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E5%A5%97%E9%A2%98">第一套题</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E5%A5%97%E9%A2%98">第二套题</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E5%A5%97%E9%A2%98">第三套题</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E5%A5%97%E9%A2%98">第四套题</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E5%A5%97%E9%A2%98">第五套题</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E5%A5%97%E9%A2%98">第六套题</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E5%A5%97%E9%A2%98">第七套题</a></li>
+</ul>
+</li>
+</ul>
+
+          </aside> -->
+        
+      </div>
+    </div>
+    <div class="py-8 text-gray-300 text-center border-t border-gray-200">
+  Powered by Gridea
+</div>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/@gridea/theme@1.0.8/js/main.js"></script>
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.0/build/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  
+    
+  
+</body>
+</html>
